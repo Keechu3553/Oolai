@@ -1,0 +1,97 @@
+HTML - CO-pilot for oolai (lot of features involed)
+
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oolai - AI Literary Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>ஓலை - Oolai</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Poems</a></li>
+            <li><a href="#">Lyrics</a></li>
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Quotes</a></li>
+            <li><a href="#" onclick="toggleLanguage()">Language: <span id="lang">Tamil</span></a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="theme-toggle">
+    <button onclick="toggleTheme()">Switch Theme</button>
+</section>
+
+<section class="mood-filter">
+    <h2>Select Mood-Based Content</h2>
+    <button onclick="filterMood('solitude')">Solitude</button>
+    <button onclick="filterMood('nostalgia')">Nostalgia</button>
+    <button onclick="filterMood('love')">Love</button>
+    <button onclick="filterMood('introspection')">Introspection</button>
+</section>
+
+<section class="ai-assistant">
+    <h2>AI Literary Companion</h2>
+    <input type="text" id="aiPrompt" placeholder="Write a poem or get AI suggestions...">
+    <button onclick="generatePoeticPrompt()">Generate Prompt</button>
+    <p id="aiResponse"></p>
+</section>
+
+<section class="trending">
+    <h2>Trending Poems</h2>
+    <div class="poem-card" onclick="expandPoem(this)">
+        <h3>நினைவுகளின் சுவடுகள்</h3>
+        <p>By Kavitha Rajan</p>
+        <span>💖 248 Likes | 📅 3 Days Ago</span>
+        <p class="description">Traces of memories that linger like the scent of rain...</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Oolai - A poetic journey into Tamil literature.</p>
+</footer>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle("dark-theme");
+    }
+
+    function toggleLanguage() {
+        let langElement = document.getElementById("lang");
+        if (langElement.textContent === "Tamil") {
+            langElement.textContent = "English";
+            document.documentElement.lang = "en";
+        } else {
+            langElement.textContent = "Tamil";
+            document.documentElement.lang = "ta";
+        }
+    }
+
+    function filterMood(mood) {
+        alert("Filtering content for mood: " + mood);
+        // Placeholder function for filtering mood-based content dynamically.
+    }
+
+    function generatePoeticPrompt() {
+        let userInput = document.getElementById("aiPrompt").value;
+        let aiResponse = document.getElementById("aiResponse");
+        if (userInput.trim() === "") {
+            aiResponse.textContent = "AI: Try writing about solitude, memories, or the echoes of forgotten dreams.";
+        } else {
+            aiResponse.textContent = "AI: Your theme '" + userInput + "' could explore deep emotional resonance.";
+        }
+    }
+
+    function expandPoem(poemCard) {
+        poemCard.classList.toggle("expanded");
+    }
+</script>
+
+</body>
+</html>
