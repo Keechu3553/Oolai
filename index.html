@@ -106,6 +106,28 @@
   <footer>
     <p>Made with ❤️ for poetic souls • © Oolai 2025</p>
   </footer>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBU2itOB23PdOQraEk7sfeWRpnazdJHIy0",
+    authDomain: "oolai-f94c8.firebaseapp.com",
+    projectId: "oolai-f94c8",
+    storageBucket: "oolai-f94c8.appspot.com",
+    messagingSenderId: "534192439699",
+    appId: "1:534192439699:web:69733793d4039d7935a866",
+    measurementId: "G-VEV9EY1XSZ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
