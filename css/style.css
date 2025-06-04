@@ -1,70 +1,132 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-  background: linear-gradient(to bottom, #fef9f5, #f9f3ec);
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #fff9f5;
   color: #333;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
+/* Header */
 header {
+  background: #ffecd2;
   text-align: center;
-  padding: 80px 20px 40px;
-  background-color: #fff3e6;
-  border-bottom: 1px solid #eee;
+  padding: 60px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin: 0;
-  color: #444;
+  color: #6c2bd9;
 }
-
 header p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-top: 10px;
+  font-size: 1.25rem;
+  color: #555;
+  margin-top: 8px;
 }
 
+/* Navigation */
 nav {
+  background: white;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 16px;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+  gap: 30px;
+  padding: 15px 0;
+  border-bottom: 2px solid #eee;
+  font-weight: 700;
 }
-
 nav a {
   text-decoration: none;
-  color: #7c4dff;
-  font-weight: 600;
+  color: #6c2bd9;
+  font-size: 1.1rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+nav a:hover,
+nav a:focus {
+  background-color: #6c2bd9;
+  color: #fff;
 }
 
+/* Sections */
 .section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(108, 43, 217, 0.1);
 }
-
 .section h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #6c2bd9;
 }
-
 .section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
+  font-size: 1.15rem;
+  color: #444;
+  line-height: 1.75;
 }
 
+/* Textarea for submissions or AI assistant */
+textarea {
+  width: 100%;
+  height: 140px;
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #6c2bd9;
+  border-radius: 8px;
+  resize: vertical;
+  margin-top: 15px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Buttons */
+button {
+  background-color: #6c2bd9;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
+}
+button:hover,
+button:focus {
+  background-color: #5323b8;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 30px 10px;
+  padding: 25px 10px;
   font-size: 0.9rem;
   color: #999;
   background-color: #fafafa;
   border-top: 1px solid #eee;
+  margin-top: 60px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .section {
+    margin: 30px 10px;
+    padding: 15px;
+  }
 }
