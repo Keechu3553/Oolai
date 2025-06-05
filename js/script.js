@@ -1,63 +1,129 @@
-// Smooth scroll to sections
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const sectionId = this.getAttribute('href');
-    document.querySelector(sectionId).scrollIntoView({
-      behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", () => {
+  // Smooth scroll for nav links
+  const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const targetID = link.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetID);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 80, // Adjust for fixed header if any
+          behavior: "smooth",
+        });
+      }
     });
   });
-});
 
-// Mood-based filter
-document.addEventListener('DOMContentLoaded', () => {
-  const moodSelect = document.getElementById('moodSelect');
-  const moodContent = document.getElementById('moodContent');
+  // Mood Filter Buttons
+  const moodButtons = document.querySelectorAll(".mood-btn");
+  const cards = document.querySelectorAll(".card");
 
-  if (moodSelect && moodContent) {
-    moodSelect.addEventListener('change', () => {
-      const mood = moodSelect.value;
-      moodContent.textContent = `Displaying content for mood: ${mood}`;
-      // Future implementation: Fetch and display content based on selected mood
+  moodButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Toggle active class
+      if (button.classList.contains("active")) {
+        button.classList.remove("active");
+        showAllCards();
+      } else {
+        clearActiveMoodButtons();
+        button.classList.add("active");
+        filterCardsByMood(button.dataset.mood);
+      }
+    });
+  });
+
+  function clearActiveMoodButtons() {
+    moodButtons.forEach(btn => btn.classList.remove("active"));
+  }
+
+  function showAllCards() {
+    cards.forEach(card => {
+      card.style.display = "block";
     });
   }
-});
 
-// AI Assistant Interaction
-const gptForm = document.getElementById('gptForm');
-const gptInput = document.getElementById('gptInput');
-const gptOutput = document.getElementById('gptOutput');
+  function filterCardsByMood(mood) {
+    cards.forEach(card => {
+      if (card.dataset.mood === mood) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
 
-if (gptForm) {
-  gptForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const query = gptInput.value.trim();
-    if (query) {
-      gptOutput.textContent = `🤖 Processing your input: "${query}"...`;
-      gptInput.value = '';
-      // Future implementation: Integrate with AI API to fetch response
+  // On page load, show all cards by default
+  showAllCards();
+
+  // AI Assistant Simulation
+  const aiForm = document.getElementById("ai-assistant-form");
+  const aiInput = document.getElementById("ai-input");
+  const aiResponseBox = document.getElementById("ai-response");
+
+  if (aiForm) {
+    aiForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const userInput = aiInput.value.trim();
+      if (userInput === "") {
+        aiResponseBox.textContent = "Please type something to get assistance.";
+        return;
+      }
+      aiResponseBox.textContent = "Thinking...";
+      // Simulate AI response with delay
+      setTimeout(() => {
+        aiResponseBox.textContent = generateAiReply(userInput);
+      }, 1500);
+      aiInput.value = "";
+    });
+  }
+
+  function generateAiReply(input) {
+    // Placeholder simple logic for AI response simulation
+    const keywords = ["poem", "sad", "happy", "love", "friend", "life", "hope"];
+    let response = "I’m here to help with your emotions and writing.";
+
+    keywords.forEach(keyword => {
+      if (input.toLowerCase().includes(keyword)) {
+        switch (keyword) {
+          case "poem":
+            response = "Try expressing your feelings with simple, heartfelt lines.";
+            break;
+          case "sad":
+            response = "Remember, after rain comes sunshine. Stay strong.";
+            break;
+          case "happy":
+            response = "Your happiness is a beautiful light—keep shining!";
+            break;
+          case "love":
+            response = "Love is the heart's true language. Let it flow naturally.";
+            break;
+          case "friend":
+            response = "Friends are the family we choose; cherish them always.";
+            break;
+          case "life":
+            response = "Life’s ups and downs make the journey meaningful.";
+            break;
+          case "hope":
+            response = "Hope is the anchor that keeps the soul steady.";
+            break;
+        }
+      }
+    });
+
+    return response;
+  }
+
+  // Hash change event to scroll or show sections if needed
+  window.addEventListener("hashchange", () => {
+    const hash = window.location.hash.substring(1);
+    const section = document.getElementById(hash);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 80,
+        behavior: "smooth",
+      });
     }
   });
-}
 
-// Animated section reveals on scroll
-const sections = document.querySelectorAll('.section');
-
-const observerOptions = {
-  threshold: 0.1
-};
-
-const revealSection = (entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('reveal');
-      observer.unobserve(entry.target);
-    }
-  });
-};
-
-const observer = new IntersectionObserver(revealSection, observerOptions);
-
-sections.forEach(section => {
-  observer.observe(section);
 });
