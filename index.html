@@ -2,87 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Oolai | ஓலை</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ஓலை - Oolai</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="min-h-screen bg-gradient-to-br from-rose-50 to-orange-50 font-sans">
 
   <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <div class="tamil-logo">ஓலை</div>
-      <div class="eng-logo">Oolai</div>
-    </div>
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">Explore</a>
-      <a href="#">Create</a>
-      <a href="#">Community</a>
-    </nav>
-    <div class="icons">
-      <button title="Dark Mode">🌙</button>
-      <button title="Search">🔍</button>
-      <button title="Notifications">🔔<span class="badge">3</span></button>
-      <div class="avatar">U</div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>கவிதை மூலம் கதைகள்</h1>
-      <p>Stories through poetry, lyrics, quotes & more — bridging Tamil heritage with modern expression.</p>
-      <div class="hero-buttons">
-        <button class="start">Start Creating</button>
-        <button class="explore">Explore Works</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Post Create Box -->
-  <section class="create-box">
-    <div class="avatar">U</div>
-    <input type="text" placeholder="Share your thoughts, stories, or poems..."/>
-    <div class="tags">
-      <span class="tag poem">📝 Poem</span>
-      <span class="tag lyrics">🎵 Lyrics</span>
-      <span class="tag story">📖 Story</span>
-      <button class="more">More +</button>
-    </div>
-  </section>
-
-  <!-- Tabs -->
-  <section class="tabs">
-    <button class="tab active">All</button>
-    <button class="tab">Poems</button>
-    <button class="tab">Lyrics</button>
-    <button class="tab">Mini Stories</button>
-    <button class="tab">Quotes</button>
-    <button class="tab">Blogs</button>
-  </section>
-
-  <!-- Cards Grid -->
-  <section class="grid">
-    <div class="card">
-      <div class="card-image" style="background-image: url('https://via.placeholder.com/300');">
-        <span class="theme-badge">Nostalgia</span>
-      </div>
-      <div class="card-body">
-        <h3>நினைவுகளின் சுவடுகள்</h3>
-        <p>Traces of memories that linger like the scent of rain on parched earth...</p>
-        <div class="card-footer">
-          <div class="avatar small">KR</div>
-          <div>
-            <strong>Kavitha Rajan</strong><br/>
-            <small>3 days ago</small>
-          </div>
-          <div class="likes">❤️ 248</div>
+  <header class="bg-white/80 backdrop-blur-sm border-b border-rose-100 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-2">
+          <div class="text-2xl font-bold text-amber-800">ஓலை</div>
+          <div class="text-sm text-gray-600">Oolai</div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="text-gray-700 hover:text-amber-800 font-medium">Home</a>
+          <a href="#" class="text-gray-700 hover:text-amber-800 font-medium">Explore</a>
+          <a href="#" class="text-gray-700 hover:text-amber-800 font-medium">Create</a>
+          <a href="#" class="text-gray-700 hover:text-amber-800 font-medium">Community</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <button aria-label="Toggle Dark Mode" class="p-2 rounded hover:bg-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.485-8.485h1M3 12H2m15.364-6.364l.707.707M6.343 17.657l-.707.707M17.657 17.657l.707-.707M6.343 6.343l-.707-.707" /></svg>
+          </button>
+          <button aria-label="Search" class="p-2 rounded hover:bg-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="11" cy="11" r="7" stroke-width="2" /><line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2" /></svg>
+          </button>
+          <button aria-label="Notifications" class="relative p-2 rounded hover:bg-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-width="2"/></svg>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+          </button>
+          <div class="h-8 w-8 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center text-gray-700 font-semibold">U</div>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gradient-to-r from-amber-900 to-amber-800 rounded-3xl p-12 text-white overflow-hidden">
+      <div class="relative z-10 max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">கவிதை மூலம் கதைகள்</h1>
+        <p class="text-xl mb-8 text-amber-100">
+          Stories through poetry, lyrics, quotes & more - bridging Tamil heritage with modern expression
+        </p>
+        <div class="flex space-x-4">
+          <button class="bg-rose-200 text-rose-800 hover:bg-rose-300 px-8 py-3 rounded">Start Creating</button>
+          <button class="border border-amber-200 text-amber-100 hover:bg-amber-200 hover:text-amber-800 px-8 py-3 rounded">Explore Works</button>
+        </div>
+      </div>
+      <div class="absolute right-8 top-1/2 transform -translate-y-1/2">
+        <div class="w-32 h-32 bg-rose-200/20 rounded-full flex items-center justify-center">
+          <div class="w-16 h-16 bg-amber-700 rounded-lg transform rotate-45"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Writing Box -->
+    <section>
+      <div class="bg-amber-800 rounded-3xl p-8 text-white max-w-4xl mx-auto">
+        <h2 class="text-3xl font-semibold mb-4">Start Writing</h2>
+        <textarea
+          class="w-full p-4 rounded-lg text-lg resize-none bg-amber-700 placeholder-amber-200 placeholder-opacity-75"
+          rows="5"
+          placeholder="Share your thoughts, stories, or poems..."
+        ></textarea>
+        <div class="mt-4 flex justify-end">
+          <button class="bg-rose-300 text-rose-900 px-6 py-2 rounded hover:bg-rose-400">Post</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mini Stories -->
+    <section>
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Mini Stories</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Example story cards -->
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">A Quiet Evening</h3>
+          <p class="text-gray-700">Soft whispers of wind through the leaves, a tranquil moment captured in time.</p>
+        </article>
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Rain's Song</h3>
+          <p class="text-gray-700">Raindrops tapping rhythm on my window, melodies of nostalgia.</p>
+        </article>
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Evening Glow</h3>
+          <p class="text-gray-700">The sun sets softly, painting skies in hues of orange and pink.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Poems -->
+    <section>
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Poems</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Example poem cards -->
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Memories' Trail</h3>
+          <p class="text-gray-700">Echoes of laughter fade, but the heart holds on.</p>
+        </article>
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Silent Dreams</h3>
+          <p class="text-gray-700">Whispers in the night, hopes wrapped in quiet shadows.</p>
+        </article>
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Morning Dew</h3>
+          <p class="text-gray-700">Fresh beginnings glisten in the soft dawn light.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Lyrics -->
+    <section>
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Lyrics</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Example lyrics cards -->
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Song of the Heart</h3>
+          <p class="text-gray-700">Melodies that speak where words fail.</p>
+        </article>
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Twilight Tunes</h3>
+          <p class="text-gray-700">Notes that dance in the fading light.</p>
+        </article>
+        <article class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition">
+          <h3 class="font-semibold text-lg mb-2">Rhythm of Rain</h3>
+          <p class="text-gray-700">Beats that echo in the stormy night.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Quotes -->
+    <section>
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Quotes</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Example quotes -->
+        <blockquote class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition italic text-gray-700">
+          "Life is the art of drawing without an eraser."
+        </blockquote>
+        <blockquote class="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow hover:shadow-lg transition italic text-gray-700">
+          "Dream
