@@ -1,346 +1,148 @@
 <!DOCTYPE html>
-<html lang="ta">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ஓலை | Oolai - Tamil Poems, Lyrics & Stories</title>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap"
-    rel="stylesheet"
-  />
-  <meta name="description" content="ஓலை - A Tamil artistic platform for poems, lyrics, mini stories, inspiring quotes, and blogs. Express yourself emotionally with calm and vibrant Tamil writings." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oolai – Feel. Write. Heal.</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
   <!-- Header -->
-  <header role="banner">
-    <div class="container">
-      <h1 tabindex="0" aria-label="ஓலை - Oolai Tamil Writing Platform">ஓலை</h1>
-      <nav role="navigation" aria-label="Primary Navigation">
-        <ul>
-          <li><a href="#poems">Poems</a></li>
-          <li><a href="#lyrics">Lyrics</a></li>
-          <li><a href="#mini-stories">Mini Stories</a></li>
-          <li><a href="#quotes">Quotes</a></li>
-          <li><a href="#featured-blogs">Blogs</a></li>
-          <li><a href="#current-writings">Current Writings</a></li>
-          <li><a href="#trending-poems">Trending Poems</a></li>
-          <li><a href="#popular-lyrics">Popular Lyrics</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header class="header">
+    <div class="logo">ஓலை Oolai</div>
+    <nav class="navbar">
+      <a href="#stories">Stories</a>
+      <a href="#poems">Poems</a>
+      <a href="#lyrics">Lyrics</a>
+      <a href="#quotes">Quotes</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#ai-assistant">AI Assistant</a>
+    </nav>
   </header>
 
-  <main role="main" class="container" tabindex="-1">
-    <!-- Mood Filter Buttons -->
-    <section aria-label="Mood Filters" class="section alt">
-      <h2 class="text-center">Mood Filters</h2>
-      <div class="mood-buttons" role="group" aria-label="Select a mood filter">
-        <button class="mood-btn" type="button" aria-pressed="false">Happy 😊</button>
-        <button class="mood-btn" type="button" aria-pressed="false">Sad 😢</button>
-        <button class="mood-btn" type="button" aria-pressed="false">Love ❤️</button>
-        <button class="mood-btn" type="button" aria-pressed="false">Inspiration 🌟</button>
-        <button class="mood-btn" type="button" aria-pressed="false">Nostalgia 🕰️</button>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Let your emotions flow, like a breeze on an Oolai.</h1>
+    <p>Write poems, lyrics, blogs, or mini stories that heal and express.</p>
+    <a href="#start-writing" class="cta">Start Writing →</a>
+  </section>
 
-    <!-- 1. Poems Section -->
-    <section id="poems" class="section" aria-labelledby="poems-heading">
-      <h2 id="poems-heading">Poems</h2>
-      <p class="section-subtitle">Explore calm and vibrant Tamil poems that touch your soul.</p>
-      <div class="cards-grid" role="list">
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/poem1.jpg" alt="கவி 1 படைப்பு" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">கனவுகள் மலரட்டும்</h3>
-            <p class="card-subtitle">Poet: கண்ணன்</p>
-            <p class="card-text">
-              மௌனத்தின் மென்மை தழுவும் இந்த இரவில்,<br />
-              கனவுகள் மலரட்டும், உன் மனதின் பக்கத்தில்...
-            </p>
-            <p class="card-footer">Published: 2025-05-10</p>
-          </div>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/poem2.jpg" alt="கவி 2 படைப்பு" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">மழை கண்ணீர்</h3>
-            <p class="card-subtitle">Poet: லலிதா</p>
-            <p class="card-text">
-              அவளது கண்களில் மழை பொழிந்தது,<br />
-              காதலின் வருத்தங்களை நெஞ்சில் விழுந்தது...
-            </p>
-            <p class="card-footer">Published: 2025-04-22</p>
-          </div>
-        </article>
-        <!-- Add more poem cards here -->
-      </div>
-    </section>
+  <!-- Mini Stories -->
+  <section id="stories" class="section">
+    <h2>Mini Stories</h2>
+    <div class="grid">
+      <div class="card">A girl lost in Kodaikanal mist finds herself in a diary...</div>
+      <div class="card">Rain writes letters on a boy's window in Madurai...</div>
+      <div class="card">One note. One beach. One memory. She returns again.</div>
+    </div>
+  </section>
 
-    <!-- 2. Lyrics Section -->
-    <section id="lyrics" class="section alt" aria-labelledby="lyrics-heading">
-      <h2 id="lyrics-heading">Lyrics</h2>
-      <p class="section-subtitle">Catchy Tamil lyrics for soulful music and moods.</p>
-      <div class="cards-grid" role="list">
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/lyrics1.jpg" alt="பாடல் 1" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">நிலா பிம்பம்</h3>
-            <p class="card-subtitle">Singer: அருண்</p>
-            <p class="card-text">
-              நிலா பிம்பம் போலே உன் நினைவுகள்,<br />
-              இதயம் தேடும் வழி காட்டும் கதை...
-            </p>
-            <p class="card-footer">Released: 2025-03-15</p>
-          </div>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/lyrics2.jpg" alt="பாடல் 2" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">காதல் இசை</h3>
-            <p class="card-subtitle">Singer: ஸ்ரீதேவி</p>
-            <p class="card-text">
-              காதல் இசை நிறைந்த இந்த இரவில்,<br />
-              நெஞ்சில் தீப்பொறி எரியும் வேளை...
-            </p>
-            <p class="card-footer">Released: 2025-02-28</p>
-          </div>
-        </article>
-        <!-- Add more lyrics cards -->
-      </div>
-    </section>
+  <!-- Poems -->
+  <section id="poems" class="section">
+    <h2>Poems</h2>
+    <div class="grid">
+      <div class="card">You were a sunset I never reached.</div>
+      <div class="card">Even in silence, you scream louder than the sea.</div>
+      <div class="card">I write, therefore I survive.</div>
+    </div>
+  </section>
 
-    <!-- 3. Mini Stories Section -->
-    <section id="mini-stories" class="section" aria-labelledby="mini-stories-heading">
-      <h2 id="mini-stories-heading">Mini Stories</h2>
-      <p class="section-subtitle">Short Tamil stories that spark emotions and nostalgia.</p>
-      <div class="cards-grid" role="list">
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/story1.jpg" alt="கதை 1" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">கடந்த காலம்</h3>
-            <p class="card-subtitle">Author: மணிமேகம்</p>
-            <p class="card-text">
-              அன்றைய நினைவுகள் தாங்கும் காதல்,<br />
-              மறந்துகொள்ள முடியாத அந்த பொழுது...
-            </p>
-            <p class="card-footer">Published: 2025-01-20</p>
-          </div>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/story2.jpg" alt="கதை 2" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">காத்திருப்பு</h3>
-            <p class="card-subtitle">Author: சந்தோஷ்</p>
-            <p class="card-text">
-              எதிர்பார்ப்பின் நிழல்கள் கடந்துபோன காலம்,<br />
-              இன்றும் எனதுப் பரிசேதம்...
-            </p>
-            <p class="card-footer">Published: 2025-04-05</p>
-          </div>
-        </article>
-        <!-- Add more mini stories -->
-      </div>
-    </section>
+  <!-- Lyrics -->
+  <section id="lyrics" class="section">
+    <h2>Lyrics</h2>
+    <div class="grid">
+      <div class="card">"Mazhaiyum Nee, Mazhaiyin Kaiyum Nee..."</div>
+      <div class="card">"Kangal Rendum Neeyadi, Kanneerum Neeyadi..."</div>
+      <div class="card">"En Uyirin Isaigal Neeyadi..."</div>
+    </div>
+  </section>
 
-    <!-- 4. Inspiring Quotes Section -->
-    <section id="quotes" class="section alt" aria-labelledby="quotes-heading">
-      <h2 id="quotes-heading">Inspiring Quotes</h2>
-      <p class="section-subtitle">Words that inspire your heart and mind.</p>
-      <div class="cards-grid" role="list" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <article class="card" role="listitem" tabindex="0">
-          <p class="card-title">"எப்போதும் முன்னேறு, தோல்வி இல்லை."</p>
-          <p class="card-subtitle">- பெரியாரு</p>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <p class="card-title">"கல்வி தான் ஒளி, Ignorance இருள்."</p>
-          <p class="card-subtitle">- தமிழர் பழமொழி</p>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <p class="card-title">"சிந்தனை மாற்றம் வாழ்க்கையை மாற்றும்."</p>
-          <p class="card-subtitle">- பாரதி</p>
-        </article>
-        <!-- Add more quotes -->
-      </div>
-    </section>
+  <!-- Quotes -->
+  <section id="quotes" class="section">
+    <h2>Quotes</h2>
+    <div class="grid">
+      <div class="card">“Even heartbreaks bloom into poems.”</div>
+      <div class="card">“Truth wears metaphors in Oolai.”</div>
+      <div class="card">“Not every goodbye is loud.”</div>
+    </div>
+  </section>
 
-    <!-- 5. Featured Blogs Section -->
-    <section id="featured-blogs" class="section" aria-labelledby="featured-blogs-heading">
-      <h2 id="featured-blogs-heading">Featured Blogs</h2>
-      <p class="section-subtitle">Thoughtful Tamil blogs on literature, culture, and emotions.</p>
-      <div class="cards-grid" role="list">
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/blog1.jpg" alt="Blog 1" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">தமிழ் இலக்கிய வரலாறு</h3>
-            <p class="card-subtitle">By: பாரதி வாசகர்</p>
-            <p class="card-text">
-              தமிழ் இலக்கியத்தின் சிறப்புக்கள் மற்றும் வளர்ச்சியின் வரலாறு பற்றி ஒரு விரிவான பார்வை.
-            </p>
-            <p class="card-footer">Posted: 2025-03-12</p>
-          </div>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/blog2.jpg" alt="Blog 2" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">கலை மற்றும் மனோவியல்</h3>
-            <p class="card-subtitle">By: லலிதா</p>
-            <p class="card-text">
-              கலை உங்களது மனதை எப்படி பாதிக்கிறது மற்றும் அதனால் வரும் மாற்றங்கள் பற்றிய சிந்தனை.
-            </p>
-            <p class="card-footer">Posted: 2025-05-08</p>
-          </div>
-        </article>
-        <!-- Add more blogs -->
-      </div>
-    </section>
+  <!-- Blogs -->
+  <section id="blogs" class="section">
+    <h2>Blogs</h2>
+    <div class="grid">
+      <div class="card">Why we need late-night writing rooms</div>
+      <div class="card">The art of pausing in poems</div>
+      <div class="card">How lyrics heal a generation</div>
+    </div>
+  </section>
 
-    <!-- 6. Current Writings Section -->
-    <section id="current-writings" class="section alt" aria-labelledby="current-writings-heading">
-      <h2 id="current-writings-heading">Current Writings</h2>
-      <p class="section-subtitle">Latest Tamil writings from our community.</p>
-      <div class="cards-grid" role="list">
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/current1.jpg" alt="Current writing 1" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">மனதின் மொழிகள்</h3>
-            <p class="card-subtitle">Author: சந்தானம்</p>
-            <p class="card-text">
-              சமகாலத்தில் எழுதிய புதிய கவிதைகள் மற்றும் கதைகள்.
-            </p>
-            <p class="card-footer">Updated: 2025-06-01</p>
-          </div>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/current2.jpg" alt="Current writing 2" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">புதிய கவிதைகள்</h3>
-            <p class="card-subtitle">Author: ரஜினி</p>
-            <p class="card-text">
-              சமீபத்திய கால கவிதைகள் மற்றும் சிறுகதைகள் தொகுப்பு.
-            </p>
-            <p class="card-footer">Updated: 2025-06-02</p>
-          </div>
-        </article>
-        <!-- Add more current writings -->
-      </div>
-    </section>
+  <!-- Trending Poems -->
+  <section class="section">
+    <h2>Trending Poems</h2>
+    <div class="grid">
+      <div class="card">"Un Ninaivil Mazhai..."</div>
+      <div class="card">"Oru Vaarthai Podhuma..."</div>
+    </div>
+  </section>
 
-    <!-- 7. Trending Poems Section -->
-    <section id="trending-poems" class="section" aria-labelledby="trending-poems-heading">
-      <h2 id="trending-poems-heading">Trending Poems</h2>
-      <p class="section-subtitle">Popular poems trending now in our community.</p>
-      <div class="cards-grid" role="list">
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/trending1.jpg" alt="Trending Poem 1" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">மழை வந்தாய்</h3>
-            <p class="card-subtitle">Poet: கதிர்</p>
-            <p class="card-footer">Views: 15,300</p>
-          </div>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/trending2.jpg" alt="Trending Poem 2" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">நினைவுகள் வண்ணம்</h3>
-            <p class="card-subtitle">Poet: மங்களம்</p>
-            <p class="card-footer">Views: 12,450</p>
-          </div>
-        </article>
-        <!-- Add more trending poems -->
-      </div>
-    </section>
+  <!-- Popular Lyrics -->
+  <section class="section">
+    <h2>Popular Lyrics</h2>
+    <div class="grid">
+      <div class="card">"Nee Thane En Uyir..."</div>
+      <div class="card">"Raathiri Nerathil..."</div>
+    </div>
+  </section>
 
-    <!-- 8. Popular Lyrics Section -->
-    <section id="popular-lyrics" class="section alt" aria-labelledby="popular-lyrics-heading">
-      <h2 id="popular-lyrics-heading">Popular Lyrics</h2>
-      <p class="section-subtitle">Top Tamil lyrics popular among listeners.</p>
-      <div class="cards-grid" role="list">
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/popular1.jpg" alt="Popular Lyrics 1" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">காதல் பாடல்</h3>
-            <p class="card-subtitle">Singer: விஜய்</p>
-            <p class="card-footer">Likes: 5,600</p>
-          </div>
-        </article>
-        <article class="card" role="listitem" tabindex="0">
-          <img src="images/popular2.jpg" alt="Popular Lyrics 2" loading="lazy" />
-          <div class="card-content">
-            <h3 class="card-title">மௌனத்தின் இசை</h3>
-            <p class="card-subtitle">Singer: அனு</p>
-            <p class="card-footer">Likes: 4,850</p>
-          </div>
-        </article>
-        <!-- Add more popular lyrics -->
-      </div>
-    </section>
+  <!-- Inspiring Quotes -->
+  <section class="section">
+    <h2>Inspiring Quotes</h2>
+    <div class="grid">
+      <div class="card">“Let your silence write.”</div>
+      <div class="card">“Pain paints the best lines.”</div>
+    </div>
+  </section>
 
-    <!-- AI Assistant Chat Section -->
-    <section id="ai-assistant" class="section ai-assistant" aria-label="AI Assistant Chat">
-      <h2>AI Assistant</h2>
-      <div class="chat-window" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
-      <form id="chat-form" aria-label="Send message to AI assistant" autocomplete="off">
-        <textarea
-          id="user-input"
-          placeholder="Type your message here..."
-          rows="3"
-          aria-required="true"
-          required
-        ></textarea>
-        <button type="submit" class="send-btn" aria-label="Send message">Send</button>
-      </form>
-    </section>
-  </main>
+  <!-- Featured Blogs -->
+  <section class="section">
+    <h2>Featured Blogs</h2>
+    <div class="grid">
+      <div class="card">The power of writing to strangers</div>
+      <div class="card">How voice notes became the new poetry</div>
+    </div>
+  </section>
+
+  <!-- Current Writings -->
+  <section class="section">
+    <h2>Current Writings</h2>
+    <div class="grid">
+      <div class="card">"I saw him in her eyes..."</div>
+      <div class="card">"Why do poems echo in pain?"</div>
+    </div>
+  </section>
+
+  <!-- Start Writing Box -->
+  <section id="start-writing" class="start-box">
+    <h2>Start Writing</h2>
+    <p>Feeling something? Let it out. Share your story, poem, quote, or anything your heart wants to whisper.</p>
+    <button>Write Now</button>
+  </section>
+
+  <!-- AI Assistant -->
+  <section id="ai-assistant" class="section ai-assistant">
+    <h2>AI Writing Companion</h2>
+    <p>Stuck with words? Your personal AI muse is here to help.</p>
+    <input type="text" placeholder="Ask me to start a poem about rain..." />
+    <button>Get Suggestion</button>
+  </section>
 
   <!-- Footer -->
-  <footer role="contentinfo">
-    <p>© 2025 ஓலை | Oolai Tamil Writing Platform. All rights reserved.</p>
-    <p>
-      Developed by <a href="https://keechu3553.github.io" target="_blank" rel="noopener noreferrer">Ijas R.</a>
-    </p>
+  <footer class="footer">
+    <p>Made with 💙 in Tamil Nadu · Oolai © 2025</p>
   </footer>
 
-  <script>
-    // Example simple JS for mood button toggle
-    const moodButtons = document.querySelectorAll('.mood-btn');
-    moodButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const pressed = btn.getAttribute('aria-pressed') === 'true';
-        btn.setAttribute('aria-pressed', !pressed);
-        btn.classList.toggle('mood-btn-active');
-        // TODO: filter cards by mood here
-      });
-    });
-
-    // Simple AI assistant interaction placeholder (can be expanded)
-    const chatWindow = document.querySelector('.chat-window');
-    const chatForm = document.getElementById('chat-form');
-    const userInput = document.getElementById('user-input');
-
-    chatForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const userText = userInput.value.trim();
-      if (!userText) return;
-      addMessage('user', userText);
-      userInput.value = '';
-      // Fake AI response after delay
-      setTimeout(() => {
-        addMessage('ai', 'This is a sample AI reply for "' + userText + '".');
-        chatWindow.scrollTop = chatWindow.scrollHeight;
-      }, 1000);
-    });
-
-    function addMessage(sender, text) {
-      const msgDiv = document.createElement('div');
-      msgDiv.classList.add('chat-message', sender);
-      msgDiv.textContent = text;
-      chatWindow.appendChild(msgDiv);
-      chatWindow.scrollTop = chatWindow.scrollHeight;
-    }
-  </script>
 </body>
-
 </html>
