@@ -4,245 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ஓலை (Oolai) – Phase 2</title>
-
-  <!-- Google Fonts: Playfair Display for headings, Open Sans for body -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: #faf9f7;
-      color: #3a3a3a;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
-    }
-    a {
-      color: #5a4a7d;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #a57edc;
-    }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      margin: 0 0 0.3em;
-      color: #4a3f6e;
-      font-weight: 700;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.2em;
-      letter-spacing: 1.2px;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 0.6em;
-      border-bottom: 2px solid #d1c7f0;
-      padding-bottom: 0.3em;
-    }
-    h3 {
-      font-size: 1.25rem;
-      color: #6b5e8a;
-      margin-bottom: 0.4em;
-    }
-    p {
-      font-size: 1rem;
-      margin-bottom: 1em;
-      color: #555;
-    }
-
-    /* Container for content width */
-    header, nav, section, footer {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.5rem 1rem 2rem;
-    }
-
-    /* Header */
-    header p {
-      font-style: italic;
-      font-size: 1.2rem;
-      color: #776ca3;
-      max-width: 650px;
-      margin-bottom: 2rem;
-    }
-
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.6rem;
-      background: #f0eefa;
-      padding: 1rem 0.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgb(130 105 165 / 0.1);
-      margin-bottom: 2rem;
-      font-weight: 600;
-    }
-    nav a {
-      padding: 0.3rem 0.8rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #665987;
-      box-shadow: inset 0 -2px 0 transparent;
-      transition: all 0.3s ease;
-    }
-    nav a:hover,
-    nav a:focus {
-      color: #a57edc;
-      box-shadow: inset 0 -2px 0 #a57edc;
-      outline: none;
-    }
-
-    /* Section */
-    section.section {
-      margin-bottom: 3rem;
-      background: #fff;
-      padding: 2rem 2rem 3rem;
-      border-radius: 14px;
-      box-shadow: 0 8px 15px rgb(168 140 235 / 0.12);
-      transition: box-shadow 0.3s ease;
-    }
-    section.section:hover {
-      box-shadow: 0 12px 25px rgb(168 140 235 / 0.25);
-    }
-
-    /* Cards */
-    .card {
-      background: #f9f8fc;
-      border-radius: 10px;
-      padding: 1.2rem 1.4rem;
-      margin-bottom: 1.3rem;
-      box-shadow: 0 4px 10px rgb(110 95 160 / 0.1);
-      transition: box-shadow 0.3s ease;
-      cursor: default;
-    }
-    .card:hover {
-      box-shadow: 0 7px 18px rgb(110 95 160 / 0.2);
-    }
-
-    /* Textareas */
-    textarea {
-      width: 100%;
-      min-height: 90px;
-      padding: 1rem 1.2rem;
-      border: 2px solid #dcd7e9;
-      border-radius: 12px;
-      resize: vertical;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1rem;
-      color: #554c70;
-      background-color: #fcfcfd;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      margin-bottom: 1.8rem;
-    }
-    textarea::placeholder {
-      color: #a899be;
-      font-style: italic;
-    }
-    textarea:focus {
-      border-color: #a57edc;
-      box-shadow: 0 0 10px rgba(165, 126, 220, 0.5);
-      outline: none;
-    }
-
-    /* Buttons */
-    button {
-      background: #8e79d4;
-      color: white;
-      font-weight: 600;
-      border: none;
-      border-radius: 14px;
-      padding: 0.7rem 2.2rem;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s ease, transform 0.15s ease;
-      user-select: none;
-    }
-    button:hover {
-      background: #a57edc;
-      transform: scale(1.05);
-    }
-    button:active {
-      transform: scale(0.98);
-    }
-
-    /* Mood Filter Buttons */
-    .filter-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .filter-buttons button {
-      background: #d6cfff;
-      color: #5a4a7d;
-      padding: 0.6rem 1.6rem;
-      font-weight: 700;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgb(165 126 220 / 0.3);
-      transition: background-color 0.3s ease;
-    }
-    .filter-buttons button:hover {
-      background-color: #b0a0e6;
-      color: #3f2c75;
-    }
-
-    /* AI Response Box */
-    #ai-response {
-      margin-top: 1rem;
-      min-height: 80px;
-      padding: 1rem 1.4rem;
-      border-radius: 12px;
-      background-color: #eeeaf7;
-      color: #5a4a7d;
-      font-style: italic;
-      font-size: 1rem;
-      box-shadow: inset 0 0 10px rgb(165 126 220 / 0.25);
-      white-space: pre-wrap;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem 0 2rem;
-      font-size: 0.9rem;
-      color: #8a7f9e;
-      font-style: italic;
-    }
-
-    /* Responsive */
-    @media (max-width: 650px) {
-      nav {
-        flex-wrap: wrap;
-        gap: 0.9rem;
-      }
-      section.section {
-        padding: 1.5rem 1.2rem 2rem;
-      }
-      h1 {
-        font-size: 2.4rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      .card {
-        padding: 1rem 1.2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -262,26 +24,32 @@
   <section id="stories" class="section">
     <h2>Mini Stories</h2>
     <p>Short bursts of imagination that capture emotions in a few lines.</p>
-    <div class="card">
-      <h3>Whispering Winds</h3>
-      <p>A fleeting moment under the banyan tree, where time stood still.</p>
-    </div>
-    <div class="card">
-      <h3>Moonlit Paths</h3>
-      <p>Footsteps echo softly as the stars guide the way home.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Whispering Winds</h3>
+        <p>A fleeting moment under the banyan tree, where time stood still.</p>
+      </div>
+      <div class="card">
+        <h3>Moonlit Paths</h3>
+        <p>Footsteps echo softly as the stars guide the way home.</p>
+      </div>
+      <!-- Add more story cards as needed -->
     </div>
   </section>
 
   <section id="blogs" class="section">
     <h2>Blogs</h2>
     <p>Personal reflections, cultural memories, and timeless ideas.</p>
-    <div class="card">
-      <h3>The Colors of Chennai</h3>
-      <p>Exploring the vibrant streets and soulful music that define the city.</p>
-    </div>
-    <div class="card">
-      <h3>Memories in Monsoon</h3>
-      <p>How rain rekindles stories from childhood and paints the present anew.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>The Colors of Chennai</h3>
+        <p>Exploring the vibrant streets and soulful music that define the city.</p>
+      </div>
+      <div class="card">
+        <h3>Memories in Monsoon</h3>
+        <p>How rain rekindles stories from childhood and paints the present anew.</p>
+      </div>
+      <!-- Add more blog cards as needed -->
     </div>
   </section>
 
@@ -289,13 +57,16 @@
     <h2>Poetic Feeds</h2>
     <p>Verses that feel, heal, and reveal beauty in ordinary moments.</p>
     <textarea placeholder="Write your poem here..."></textarea>
-    <div class="card">
-      <h3>Silent Echoes</h3>
-      <p>Between the spaces of words, a quiet truth hums softly.</p>
-    </div>
-    <div class="card">
-      <h3>Sunrise Melodies</h3>
-      <p>Each dawn sings a song of hope, waiting to be heard.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Silent Echoes</h3>
+        <p>Between the spaces of words, a quiet truth hums softly.</p>
+      </div>
+      <div class="card">
+        <h3>Sunrise Melodies</h3>
+        <p>Each dawn sings a song of hope, waiting to be heard.</p>
+      </div>
+      <!-- Add more poem cards as needed -->
     </div>
   </section>
 
@@ -308,13 +79,16 @@
   <section id="trending" class="section">
     <h2>Trending Posts</h2>
     <p>Popular stories, poems, and lyrics loved by our community.</p>
-    <div class="card">
-      <h3>The Last Monsoon</h3>
-      <p>A poignant poem capturing the essence of farewell rains.</p>
-    </div>
-    <div class="card">
-      <h3>Rhythm of the City</h3>
-      <p>A lively blog post about the pulsating heartbeat of urban life.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>The Last Monsoon</h3>
+        <p>A poignant poem capturing the essence of farewell rains.</p>
+      </div>
+      <div class="card">
+        <h3>Rhythm of the City</h3>
+        <p>A lively blog post about the pulsating heartbeat of urban life.</p>
+      </div>
+      <!-- Add more trending cards as needed -->
     </div>
   </section>
 
@@ -333,7 +107,7 @@
     <h2>AI Assistant</h2>
     <p>Ask for creative help, poem suggestions, or lyric ideas.</p>
     <textarea placeholder="Type your request to the AI assistant..."></textarea>
-    <button id="ai-send-btn">Send</button>
+    <button>Send</button>
     <div id="ai-response"></div>
   </section>
 
@@ -341,7 +115,23 @@
     <p>Made with ❤️ for poetic souls • © Oolai 2025</p>
   </footer>
 
-  <script>
-    // Example: Basic AI assistant interaction simulation
-    const btn = document.getElementById('ai-send-btn');
-    const textarea = document.querySelector('#
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBU2itOB23PdOQraEk7sfeWRpnazdJHIy0",
+    authDomain: "oolai-f94c8.firebaseapp.com",
+    projectId: "oolai-f94c8",
+    storageBucket: "oolai-f94c8.appspot.com",
+    messagingSenderId: "534192439699",
+    appId: "1:534192439699:web:69733793d4039d7935a866",
+    measurementId: "G-VEV9EY1XSZ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+</body>
+</html>
