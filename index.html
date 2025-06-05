@@ -1,325 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oolai - Creative Writing Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oolai | ஓலை</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Start Writing Section (Brown Background) -->
-  <section id="start-writing" class="section start-writing">
-    <div class="container">
-      <h1>Start Writing</h1>
-      <p>Begin your journey of creative writing with Oolai. Share your mini stories, poems, lyrics, and more. Unleash your creativity today!</p>
-      <button class="btn">Get Started</button>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="tamil-logo">ஓலை</div>
+      <div class="eng-logo">Oolai</div>
     </div>
-  </section>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">Create</a>
+      <a href="#">Community</a>
+    </nav>
+    <div class="icons">
+      <button title="Dark Mode">🌙</button>
+      <button title="Search">🔍</button>
+      <button title="Notifications">🔔<span class="badge">3</span></button>
+      <div class="avatar">U</div>
+    </div>
+  </header>
 
-  <!-- Mini Stories Section -->
-  <section id="mini-stories" class="section mini-stories">
-    <div class="container">
-      <h2>Mini Stories</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Mini Story Image 1">
-          <h3>Story Title 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Mini Story Image 2">
-          <h3>Story Title 2</h3>
-          <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Mini Story Image 3">
-          <h3>Story Title 3</h3>
-          <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.</p>
-        </article>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>கவிதை மூலம் கதைகள்</h1>
+      <p>Stories through poetry, lyrics, quotes & more — bridging Tamil heritage with modern expression.</p>
+      <div class="hero-buttons">
+        <button class="start">Start Creating</button>
+        <button class="explore">Explore Works</button>
       </div>
     </div>
   </section>
 
-  <!-- Poems Section -->
-  <section id="poems" class="section poems">
-    <div class="container">
-      <h2>Poems</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Poem Image 1">
-          <h3>Poem Title 1</h3>
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Poem Image 2">
-          <h3>Poem Title 2</h3>
-          <p>Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Poem Image 3">
-          <h3>Poem Title 3</h3>
-          <p>Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
-        </article>
-      </div>
+  <!-- Post Create Box -->
+  <section class="create-box">
+    <div class="avatar">U</div>
+    <input type="text" placeholder="Share your thoughts, stories, or poems..."/>
+    <div class="tags">
+      <span class="tag poem">📝 Poem</span>
+      <span class="tag lyrics">🎵 Lyrics</span>
+      <span class="tag story">📖 Story</span>
+      <button class="more">More +</button>
     </div>
   </section>
 
-  <!-- Lyrics Section -->
-  <section id="lyrics" class="section lyrics">
-    <div class="container">
-      <h2>Lyrics</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Lyrics Image 1">
-          <h3>Lyric Title 1</h3>
-          <p>Praesent congue erat at massa. Sed cursus turpis vitae tortor.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Lyrics Image 2">
-          <h3>Lyric Title 2</h3>
-          <p>Fusce neque. Donec vitae sapien ut libero venenatis faucibus.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Lyrics Image 3">
-          <h3>Lyric Title 3</h3>
-          <p>Morbi nec metus. Phasellus blandit leo ut odio. Vestibulum fringilla pede sit amet augue.</p>
-        </article>
-      </div>
-    </div>
+  <!-- Tabs -->
+  <section class="tabs">
+    <button class="tab active">All</button>
+    <button class="tab">Poems</button>
+    <button class="tab">Lyrics</button>
+    <button class="tab">Mini Stories</button>
+    <button class="tab">Quotes</button>
+    <button class="tab">Blogs</button>
   </section>
 
-  <!-- Quotes Section -->
-  <section id="quotes" class="section quotes">
-    <div class="container">
-      <h2>Quotes</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Quote Image 1">
-          <h3>Quote Title 1</h3>
-          <p>Ut varius tincidunt libero. Phasellus ullamcorper ipsum rutrum nunc.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Quote Image 2">
-          <h3>Quote Title 2</h3>
-          <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Quote Image 3">
-          <h3>Quote Title 3</h3>
-          <p>Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at, dui.</p>
-        </article>
+  <!-- Cards Grid -->
+  <section class="grid">
+    <div class="card">
+      <div class="card-image" style="background-image: url('https://via.placeholder.com/300');">
+        <span class="theme-badge">Nostalgia</span>
       </div>
-    </div>
-  </section>
-
-  <!-- Blogs Section -->
-  <section id="blogs" class="section blogs">
-    <div class="container">
-      <h2>Blogs</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Image 1">
-          <h3>Blog Title 1</h3>
-          <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Image 2">
-          <h3>Blog Title 2</h3>
-          <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Image 3">
-          <h3>Blog Title 3</h3>
-          <p>Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trending Poems Section -->
-  <section id="trending-poems" class="section trending-poems">
-    <div class="container">
-      <h2>Trending Poems</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Trending Poem 1">
-          <h3>Trending Poem 1</h3>
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Trending Poem 2">
-          <h3>Trending Poem 2</h3>
-          <p>Nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Trending Poem 3">
-          <h3>Trending Poem 3</h3>
-          <p>Nulla posuere. Donec vitae sapien ut libero venenatis faucibus.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Popular Lyrics Section -->
-  <section id="popular-lyrics" class="section popular-lyrics">
-    <div class="container">
-      <h2>Popular Lyrics</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Popular Lyric 1">
-          <h3>Popular Lyric 1</h3>
-          <p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Popular Lyric 2">
-          <h3>Popular Lyric 2</h3>
-          <p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Popular Lyric 3">
-          <h3>Popular Lyric 3</h3>
-          <p>Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Inspiring Quotes Section -->
-  <section id="inspiring-quotes" class="section inspiring-quotes">
-    <div class="container">
-      <h2>Inspiring Quotes</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Inspiring Quote 1">
-          <h3>Inspiring Quote 1</h3>
-          <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Inspiring Quote 2">
-          <h3>Inspiring Quote 2</h3>
-          <p>Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Inspiring Quote 3">
-          <h3>Inspiring Quote 3</h3>
-          <p>Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Blogs Section -->
-  <section id="featured-blogs" class="section featured-blogs">
-    <div class="container">
-      <h2>Featured Blogs</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Featured Blog 1">
-          <h3>Featured Blog 1</h3>
-          <p>Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Featured Blog 2">
-          <h3>Featured Blog 2</h3>
-          <p>Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.</p>
-        </article>
-        <article class="card">
-          <img src="https://via.placeholder.com/300x200" alt="Featured Blog 3">
-          <h3>Featured Blog 3</h3>
-          <p>Vestibulum suscipit nulla quis orci. Donec elit libero, sodales nec.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Current Writings Section -->
-  <section id="current-writings" class="section current-writings">
-    <div class="container">
-      <h2>Current Writings</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Current Writing 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit nulla quis orci.</p>
-        </article>
-        <article class="card">
-          <h3>Current Writing 2</h3>
-          <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.</p>
-        </article>
-        <article class="card">
-          <h3>Current Writing 3</h3>
-          <p>Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Praesent dapibus.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mood Filter Section -->
-  <section id="mood-filter" class="section mood-filter">
-    <div class="container">
-      <h2>Mood Filter</h2>
-      <p>Select a mood to filter writings:</p>
-      <div class="moods">
-        <div class="mood-item">
-          <span role="img" aria-label="Happy">😊</span>
-          <p>Happy</p>
-        </div>
-        <div class="mood-item">
-          <span role="img" aria-label="Sad">😢</span>
-          <p>Sad</p>
-        </div>
-        <div class="mood-item">
-          <span role="img" aria-label="Inspirational">💡</span>
-          <p>Inspirational</p>
-        </div>
-        <div class="mood-item">
-          <span role="img" aria-label="Romantic">❤️</span>
-          <p>Romantic</p>
-        </div>
-        <div class="mood-item">
-          <span role="img" aria-label="Mystery">🕵️</span>
-          <p>Mystery</p>
+      <div class="card-body">
+        <h3>நினைவுகளின் சுவடுகள்</h3>
+        <p>Traces of memories that linger like the scent of rain on parched earth...</p>
+        <div class="card-footer">
+          <div class="avatar small">KR</div>
+          <div>
+            <strong>Kavitha Rajan</strong><br/>
+            <small>3 days ago</small>
+          </div>
+          <div class="likes">❤️ 248</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AI Assistant Section -->
-  <section id="ai-assistant" class="section ai-assistant">
-    <div class="container">
-      <h2>AI Assistant</h2>
-      <p>Use our AI writing assistant to generate ideas or continue your story.</p>
-      <form id="ai-form">
-        <input type="text" id="ai-input" placeholder="Ask anything...">
-        <button type="submit" class="btn">Ask AI</button>
-      </form>
-      <div id="ai-output" class="ai-output"></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="section footer">
-    <div class="container">
-      <p>&copy; 2025 Oolai. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript for AI Assistant (Dummy Interaction) -->
-  <script>
-    const aiForm = document.getElementById('ai-form');
-    const aiInput = document.getElementById('ai-input');
-    const aiOutput = document.getElementById('ai-output');
-    aiForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const prompt = aiInput.value.trim();
-      if (prompt) {
-        aiOutput.innerText = "AI Assistant Response: You asked – \"" + prompt + "\". (This is a placeholder response.)";
-      } else {
-        aiOutput.innerText = "Please enter a prompt for the AI assistant.";
-      }
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
