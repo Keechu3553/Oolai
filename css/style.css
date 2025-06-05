@@ -1,111 +1,239 @@
-body {
-  font-family: 'Helvetica Neue', sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  background: #f9f6f1;
-  color: #222;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Noto Sans Tamil', sans-serif;
 }
 
-header {
+body {
+  background-color: #f9f7f1;
+  color: #3b3a36;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+}
+
+/* Header - Hero */
+.hero {
+  background: linear-gradient(135deg, #a6dcef, #efefef);
+  padding: 3rem 1rem;
   text-align: center;
-  background-color: #fff;
-  padding: 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  margin: 1.5rem;
 }
 
-header h1 {
-  font-size: 2.8rem;
-  margin: 0;
-  color: #6c3c8f;
+.hero h1 {
+  font-family: 'Noto Sans Tamil', serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #0b4f6c;
+  margin-bottom: 0.5rem;
 }
 
-header p {
-  font-size: 1rem;
-  color: #666;
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #2c3e50cc;
 }
 
-nav {
+/* Navbar */
+.navbar {
+  background-color: #0b4f6c;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.nav-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  background: #f1eef5;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  gap: 1.25rem;
 }
 
-nav a {
+.nav-links a {
+  color: #eaf4f4;
   text-decoration: none;
-  color: #6c3c8f;
-  font-weight: bold;
-}
-
-.section {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section h2 {
-  color: #6c3c8f;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-textarea {
-  width: 100%;
-  max-width: 800px;
-  height: 100px;
-  margin: 1rem auto;
-  display: block;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  font-weight: 600;
   font-size: 1rem;
-  resize: vertical;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
-.grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #19a0d8;
+  outline: none;
 }
 
-.card {
-  background-color: #fff;
-  padding: 1.5rem;
+/* Section Base */
+.section {
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
+  margin: 1.5rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Section Titles */
+.section h2 {
+  font-family: 'Noto Sans Tamil', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #0b4f6c;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Section Descriptions */
+.section p {
+  color: #555555cc;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Cards */
+.card {
+  background: #f6f8f7;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1.5px 8px rgba(0,0,0,0.08);
+  transition: box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-}
-
-.filter-buttons {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.filter-buttons button {
-  background-color: #6c3c8f;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   cursor: pointer;
 }
 
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #1c4966;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #444444cc;
+  line-height: 1.4;
+}
+
+/* Textarea for Poem and Lyrics */
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1.8px solid #b0bec5;
+  background: #f9f7f1;
+  resize: vertical;
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #0b4f6c;
+  background: #ffffff;
+}
+
+/* Buttons */
+button, .mood-btn {
+  background-color: #0b4f6c;
+  color: #eaf4f4;
+  border: none;
+  padding: 0.65rem 1.3rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  box-shadow: 0 3px 10px rgba(11, 79, 108, 0.4);
+}
+
+button:hover, .mood-btn:hover {
+  background-color: #19a0d8;
+}
+
+button:focus, .mood-btn:focus {
+  outline: 3px solid #5bc0de;
+}
+
+/* Mood Buttons Container */
+.mood-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* AI Assistant */
+.ai-section textarea {
+  min-height: 120px;
+}
+
+.ai-response-box {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: #e3f2fd;
+  border-radius: 10px;
+  min-height: 80px;
+  font-style: italic;
+  color: #0b4f6c;
+  box-shadow: inset 0 0 8px #b3e5fc;
+}
+
+/* Footer */
 footer {
+  background-color: #0b4f6c;
+  color: #eaf4f4;
   text-align: center;
-  padding: 2rem;
-  background: #f1eef5;
-  color: #555;
-  font-size: 0.9rem;
-  margin-top: 3rem;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.1);
+  border-radius: 0 0 12px 12px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .section {
+    margin: 1rem 0.8rem;
+    padding: 1.5rem 1rem;
+  }
 }
