@@ -10,7 +10,7 @@
 
   <header>
     <h1>ஓலை (Oolai)</h1>
-    <p>A calm, creative space for mini stories, blogs, poetic expressions & lyric writing.</p>
+    <p>A calm, creative space for mini stories, blogs, poems & lyric writing.</p>
   </header>
 
   <nav>
@@ -23,85 +23,87 @@
     <a href="#ai-assistant">AI Assistant</a>
   </nav>
 
-  <section id="stories" class="section">
-    <h2>Mini Stories</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Whispering Winds</h3>
-        <p>A fleeting moment under the banyan tree, where time stood still.</p>
+  <main>
+    <section id="stories" class="section">
+      <h2>Mini Stories</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Whispering Winds</h3>
+          <p>A fleeting moment under the banyan tree, where time stood still.</p>
+        </div>
+        <div class="card">
+          <h3>Moonlit Paths</h3>
+          <p>Footsteps echo softly as the stars guide the way home.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Moonlit Paths</h3>
-        <p>Footsteps echo softly as the stars guide the way home.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="blogs" class="section">
-    <h2>Blogs</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>The Colors of Chennai</h3>
-        <p>Exploring the vibrant streets and soulful music that define the city.</p>
+    <section id="blogs" class="section">
+      <h2>Blogs</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>The Colors of Chennai</h3>
+          <p>Exploring the vibrant streets and soulful music that define the city.</p>
+        </div>
+        <div class="card">
+          <h3>Memories in Monsoon</h3>
+          <p>How rain rekindles stories from childhood and paints the present anew.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Memories in Monsoon</h3>
-        <p>How rain rekindles stories from childhood and paints the present anew.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="poems" class="section">
-    <h2>Poetic Feeds</h2>
-    <textarea placeholder="Write your poem here..."></textarea>
-    <div class="grid">
-      <div class="card">
-        <h3>Silent Echoes</h3>
-        <p>Between the spaces of words, a quiet truth hums softly.</p>
+    <section id="poems" class="section">
+      <h2>Poetic Feeds</h2>
+      <textarea placeholder="Write your poem here..."></textarea>
+      <div class="grid">
+        <div class="card">
+          <h3>Silent Echoes</h3>
+          <p>Between the spaces of words, a quiet truth hums softly.</p>
+        </div>
+        <div class="card">
+          <h3>Sunrise Melodies</h3>
+          <p>Each dawn sings a song of hope, waiting to be heard.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Sunrise Melodies</h3>
-        <p>Each dawn sings a song of hope, waiting to be heard.</p>
+    </section>
+
+    <section id="lyrics" class="section">
+      <h2>Lyric Writing</h2>
+      <textarea placeholder="Compose your lyrics here..."></textarea>
+    </section>
+
+    <section id="trending" class="section">
+      <h2>Trending Posts</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>The Last Monsoon</h3>
+          <p>A poignant poem capturing the essence of farewell rains.</p>
+        </div>
+        <div class="card">
+          <h3>Rhythm of the City</h3>
+          <p>A lively blog post about the pulsating heartbeat of urban life.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="lyrics" class="section">
-    <h2>Lyric Writing</h2>
-    <textarea placeholder="Compose your lyrics here..."></textarea>
-  </section>
-
-  <section id="trending" class="section">
-    <h2>Trending Posts</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>The Last Monsoon</h3>
-        <p>A poignant poem capturing the essence of farewell rains.</p>
+    <section id="mood-filter" class="section">
+      <h2>Mood Based Filter</h2>
+      <p>Select moods to filter posts and find content that resonates with your feelings.</p>
+      <div class="filter-buttons">
+        <button>Happy</button>
+        <button>Calm</button>
+        <button>Melancholy</button>
+        <button>Inspired</button>
       </div>
-      <div class="card">
-        <h3>Rhythm of the City</h3>
-        <p>A lively blog post about the pulsating heartbeat of urban life.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="mood-filter" class="section">
-    <h2>Mood Based Filter</h2>
-    <p>Select moods to filter posts and find content that resonates with your feelings.</p>
-    <div class="filter-buttons">
-      <button>Happy</button>
-      <button>Calm</button>
-      <button>Melancholy</button>
-      <button>Inspired</button>
-    </div>
-  </section>
-
-  <section id="ai-assistant" class="section">
-    <h2>AI Assistant</h2>
-    <textarea placeholder="Type your request to the AI assistant..."></textarea>
-    <button onclick="simulateAIResponse()">Send</button>
-    <div id="ai-response"></div>
-  </section>
+    <section id="ai-assistant" class="section">
+      <h2>AI Assistant</h2>
+      <textarea placeholder="Type your request to the AI assistant..."></textarea>
+      <button onclick="simulateAIResponse()">Send</button>
+      <div id="ai-response"></div>
+    </section>
+  </main>
 
   <footer>
     <p>Made with ❤️ for poetic souls • © Oolai 2025</p>
@@ -110,7 +112,7 @@
   <script>
     function simulateAIResponse() {
       const responseBox = document.getElementById("ai-response");
-      responseBox.innerHTML = "<p><em>✨ Here's an inspiring verse for you: 'Let your silence speak in syllables.'</em></p>";
+      responseBox.innerHTML = "<p><em>✨ Here's an inspiring verse: 'Let your silence speak in syllables.'</em></p>";
     }
   </script>
 
