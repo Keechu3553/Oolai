@@ -3,307 +3,369 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Oolai - Calm Tamil Mini Stories, Poems & More</title>
-<link rel="stylesheet" href="style.css" />
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<title>Oolai - Calm Tamil Emotional Expression</title>
+<style>
+  /* Reset and basics */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fefefe;
+    color: #222;
+    line-height: 1.5;
+  }
+  a {
+    text-decoration: none;
+    color: #3a86ff;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container and layout */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 1.5rem;
+  }
+  h1, h2, h3, h4 {
+    margin-top: 0;
+    font-weight: 700;
+  }
+
+  /* Header */
+  header {
+    background: #3a86ff;
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Mood Filter Buttons */
+  #mood-filter {
+    display: flex;
+    gap: 0.75rem;
+    margin: 1rem 0 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #mood-filter button {
+    background: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+  }
+  #mood-filter button.active,
+  #mood-filter button:hover {
+    background: #3a86ff;
+    color: white;
+  }
+
+  /* Content Sections */
+  section.content-section {
+    margin-bottom: 3rem;
+  }
+  section.content-section h2 {
+    font-size: 1.8rem;
+    color: #3a86ff;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #3a86ff;
+    padding-bottom: 0.25rem;
+    max-width: fit-content;
+  }
+
+  /* Cards Grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1rem 1.25rem;
+  }
+
+  /* Card style */
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: 0 8px 15px rgba(58,134,255,0.3);
+  }
+  .card .title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+    color: #222;
+  }
+  .card .content {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+    white-space: pre-wrap;
+  }
+  .card .meta {
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+  }
+
+  /* Start Writing Big Box */
+  #start-writing {
+    background: #3a86ff;
+    color: white;
+    border-radius: 15px;
+    margin: 3rem auto 4rem;
+    padding: 2.5rem 3rem;
+    max-width: 900px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 6px 20px rgba(58,134,255,0.4);
+    transition: background-color 0.3s ease;
+  }
+  #start-writing:hover {
+    background: #2e6edc;
+  }
+
+  /* AI Assistant Section */
+  #ai-assistant {
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    background: #f0f7ff;
+    box-shadow: 0 4px 15px rgba(58,134,255,0.2);
+  }
+  #ai-assistant h2 {
+    color: #3a86ff;
+    margin-bottom: 1.25rem;
+  }
+  #ai-assistant textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1.5px solid #3a86ff;
+    resize: vertical;
+    font-family: inherit;
+  }
+  #ai-assistant button {
+    margin-top: 1rem;
+    background: #3a86ff;
+    border: none;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #ai-assistant button:hover {
+    background: #2e6edc;
+  }
+  #ai-response {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    min-height: 60px;
+    font-size: 1rem;
+    color: #222;
+    white-space: pre-wrap;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+    margin-top: 4rem;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    #start-writing {
+      font-size: 1.3rem;
+      padding: 1.8rem 2rem;
+    }
+  }
+</style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <h1 class="site-title">ஓலை (Oolai)</h1>
-    <nav class="site-nav">
-      <ul>
-        <li><a href="#mini-stories">Mini Stories</a></li>
-        <li><a href="#poems">Poems</a></li>
-        <li><a href="#lyrics">Lyrics</a></li>
-        <li><a href="#quotes">Quotes</a></li>
-        <li><a href="#blogs">Blogs</a></li>
-      </ul>
-    </nav>
-  </div>
+
+<header>
+  <h1>Oolai (ஓலை)</h1>
+  <p>Calm Tamil Emotional Expression - Mini Stories, Poems, Lyrics, Quotes & Blogs</p>
 </header>
 
-<main>
-  <section id="start-writing" class="start-writing-section">
-    <div class="container">
-      <h2>Start Writing</h2>
-      <textarea placeholder="Express your thoughts here..."></textarea>
-      <button class="btn-submit">Submit</button>
-    </div>
-  </section>
+<div class="container">
 
-  <section id="mini-stories" class="content-section">
-    <div class="container">
-      <h2>Mini Stories</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Story Title 1</h3>
-          <p>A short mini story excerpt goes here, something calm and vibrant to invite readers...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Story Title 2</h3>
-          <p>A second mini story snippet to maintain the unique and creative vibe of Oolai...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Story Title 3</h3>
-          <p>Another calm, neat mini story snippet, encouraging readers to dive deeper...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="poems" class="content-section">
-    <div class="container">
-      <h2>Poems</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Poem Title 1</h3>
-          <p>A poem excerpt that conveys calmness and inspiration...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Poem Title 2</h3>
-          <p>A second poem snippet with vibrant and soothing tone...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Poem Title 3</h3>
-          <p>Another poem snippet encouraging creativity and emotion...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="lyrics" class="content-section">
-    <div class="container">
-      <h2>Lyrics</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Lyric Title 1</h3>
-          <p>Lyrics snippet that captures deep emotions and melody...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Lyric Title 2</h3>
-          <p>A second lyric excerpt reflecting the mood of Oolai...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Lyric Title 3</h3>
-          <p>Another lyric snippet full of poetic expression...</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="quotes" class="content-section">
-    <div class="container">
-      <h2>Quotes</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Quote 1</h3>
-          <p>"A calm and inspiring quote to motivate."</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Quote 2</h3>
-          <p>"A second quote emphasizing creativity and emotion."</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Quote 3</h3>
-          <p>"Another thoughtful quote for inspiration."</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="blogs" class="content-section">
-    <div class="container">
-      <h2>Blogs</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Blog Title 1</h3>
-          <p>An insightful blog snippet reflecting Oolai’s calm and creative tone.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Blog Title 2</h3>
-          <p>A second blog preview inviting readers to explore.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Blog Title 3</h3>
-          <p>Another blog snippet maintaining the vibrant and neat style.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-  <!-- Continuing from Blogs section -->
-
-  <section id="trending-poems" class="content-section">
-    <div class="container">
-      <h2>Trending Poems</h2>
-      <div class="card-grid trending">
-        <article class="card">
-          <h3>Trending Poem 1</h3>
-          <p>Popular poem excerpt drawing the community’s attention.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Trending Poem 2</h3>
-          <p>Another trending poem snippet, full of vibrant emotion.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Trending Poem 3</h3>
-          <p>A poem that is currently resonating deeply with readers.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="popular-lyrics" class="content-section">
-    <div class="container">
-      <h2>Popular Lyrics</h2>
-      <div class="card-grid popular-lyrics">
-        <article class="card">
-          <h3>Popular Lyric 1</h3>
-          <p>A widely appreciated lyric excerpt, full of feeling and flow.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Popular Lyric 2</h3>
-          <p>Another lyric that has touched many hearts recently.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Popular Lyric 3</h3>
-          <p>A lyric snippet combining melody and mood beautifully.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="inspiring-quotes" class="content-section">
-    <div class="container">
-      <h2>Inspiring Quotes</h2>
-      <div class="card-grid inspiring-quotes">
-        <article class="card">
-          <h3>Quote 1</h3>
-          <p>"A deeply inspiring quote to uplift the spirit."</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Quote 2</h3>
-          <p>"Another powerful thought for reflection and creativity."</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Quote 3</h3>
-          <p>"A quote that motivates and calms at the same time."</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="featured-blogs" class="content-section">
-    <div class="container">
-      <h2>Featured Blogs</h2>
-      <div class="card-grid featured-blogs">
-        <article class="card">
-          <h3>Featured Blog 1</h3>
-          <p>A thoughtfully curated blog post to explore deep ideas.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Featured Blog 2</h3>
-          <p>Another featured blog encouraging calm and creativity.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Featured Blog 3</h3>
-          <p>A featured blog post blending emotions with neat style.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="current-writings" class="content-section">
-    <div class="container">
-      <h2>Current Writings</h2>
-      <div class="card-grid current-writings">
-        <article class="card">
-          <h3>Current Writing 1</h3>
-          <p>Latest writing that captures the ongoing mood of Oolai.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Current Writing 2</h3>
-          <p>Another fresh writing piece full of emotion and calmness.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-        <article class="card">
-          <h3>Current Writing 3</h3>
-          <p>Newest writing capturing the vibrant, neat, and creative tone.</p>
-          <a href="#" class="read-more">Read More</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mood Filter Section -->
-  <section id="mood-filter" class="mood-filter-section">
-    <div class="container">
-      <h2>Filter by Mood</h2>
-      <div class="mood-buttons">
-        <button class="mood-btn" data-mood="happy">😊 Happy</button>
-        <button class="mood-btn" data-mood="sad">😢 Sad</button>
-        <button class="mood-btn" data-mood="angry">😡 Angry</button>
-        <button class="mood-btn" data-mood="calm">😌 Calm</button>
-        <button class="mood-btn" data-mood="inspired">✨ Inspired</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Assistant Section -->
-  <section id="ai-assistant" class="ai-assistant-section">
-    <div class="container">
-      <h2>AI Assistant</h2>
-      <textarea id="ai-input" placeholder="Type your creative prompts here..."></textarea>
-      <button id="ai-submit">Generate</button>
-      <div id="ai-output" class="ai-output"></div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2025 Oolai. All rights reserved.</p>
-    <nav>
-      <ul>
-        <li><a href="#start-writing">Start Writing</a></li>
-        <li><a href="#mini-stories">Mini Stories</a></li>
-        <li><a href="#poems">Poems</a></li>
-        <li><a href="#lyrics">Lyrics</a></li>
-        <li><a href="#quotes">Quotes</a></li>
-        <li><a href="#blogs">Blogs</a></li>
-      </ul>
-    </nav>
+  <!-- Mood Filter Buttons -->
+  <div id="mood-filter">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="happy">Happy 😊</button>
+    <button data-filter="sad">Sad 😢</button>
+    <button data-filter="love">Love ❤️</button>
+    <button data-filter="motivational">Motivational 💪</button>
+    <button data-filter="thoughtful">Thoughtful 🤔</button>
+    <button data-filter="calm">Calm 🕊️</button>
   </div>
-</footer>
 
-<script src="script.js"></script>
-</body>
-</html>
+  <!-- Poems Section -->
+  <section id="poems" class="content-section">
+    <h2>Poems</h2>
+    <div class="cards-grid">
+      <article class="card" data-mood="happy">
+        <div class="title">கடல் காற்று</div>
+        <div class="content">கடல் காற்று வீசும் போது...</div>
+        <div class="meta">By Arul | 2 days ago</div>
+      </article>
+      <article class="card" data-mood="thoughtful">
+        <div class="title">நிழல் சொல்</div>
+        <div class="content">நிழல் சொல்கிறேன் நெஞ்சுக்குள்...</div>
+        <div class="meta">By Meera | 5 days ago</div>
+      </article>
+      <article class="card" data-mood="sad">
+        <div class="title">துயரம் மழை</div>
+        <div class="content">மழை விழுந்து நிலத்தை நனையும்...</div>
+        <div class="meta">By Kumar | 1 week ago</div>
+      </article>
+      <!-- Add more poem cards here -->
+    </div>
+  </section>
+
+  <!-- Lyrics Section -->
+  <section id="lyrics" class="content-section">
+    <h2>Lyrics</h2>
+    <div class="cards-grid">
+      <article class="card" data-mood="love">
+        <div class="title">காதல் ஓசை</div>
+        <div class="content">காதல் ஓசை காதல் கவிதை...</div>
+        <div class="meta">By Priya | 3 days ago</div>
+      </article>
+      <article class="card" data-mood="motivational">
+        <div class="title">வெற்றி பாடல்</div>
+        <div class="content">வெற்றி என்பது கடைசி வரை...</div>
+        <div class="meta">By Ramesh | 1 day ago</div>
+      </article>
+      <!-- Add more lyrics cards here -->
+    </div>
+  </section>
+
+  <!-- Mini Stories Section -->
+  <section id="mini-stories" class="content-section">
+    <h2>Mini Stories</h2>
+    <div class="cards-grid">
+      <article class="card" data-mood="calm">
+        <div class="title">அடர்ந்த காட்டில்</div>
+        <div class="content">அடர்ந்த காட்டின் மையத்தில் ஒரு சிறிய கிராமம்...</div>
+        <div class="meta">By Kavi | 6 days ago</div>
+      </article>
+      <article class="card" data-mood="happy">
+        <div class="title">பரிசு நாள்</div>
+        <div class="content">பரிசு நாள் கொண்டாட்டம் மிகுந்த சந்தோஷம்...</div>
+        <div class="meta">By Anbu | 4 days ago</div>
+      </article>
+      <!-- Add more mini stories here -->
+    </div>
+  </section>
+
+  <!-- Quotes Section -->
+  <section id="quotes" class="content-section">
+    <h2>Quotes</h2>
+    <div class="cards-grid">
+      <article class="card" data-mood="motivational">
+        <div class="title">மனப்பாங்கு</div>
+        <div class="content">மனப்பாங்கு தான் வாழ்வின் விசை...</div>
+        <div class="meta">By Senthil | 2 weeks ago</div>
+      </article>
+      <article class="card" data-mood="thoughtful">
+        <div class="title">அறிவு பேச்சு</div>
+        <div class="content">அறிவு பேச்சு ஆழமானது...</div>
+        <div class="meta">By Latha | 1 week ago</div>
+      </article>
+      <!-- Add more quotes here -->
+    </div>
+  </section>
+
+  <!-- Blogs Section -->
+  <section id="blogs" class="content-section">
+    <h2>Blogs</h2>
+    <div class="cards-grid">
+      <article class="card" data-mood="calm">
+        <div class="title">தமிழ் எழுத்து வரலாறு</div>
+        <div class="content">தமிழ் எழுத்தின் வரலாறு பற்றிய ஒரு சிறிய ஆய்வு...</div>
+        <div class="meta">By Selvi | 3 weeks ago</div>
+      </article>
+      <article class="card" data-mood="happy">
+        <div class="title">சிறுவர் கதைகள்</div>
+        <div class="content">சிறுவர்களுக்கான கதைகள் மற்றும் கல்வி...</div>
+        <div class="meta">By Hari | 5 days ago</div>
+      </article>
+      <!-- Add more blogs here -->
+    </div>
+  </section>
+
+  <!-- Below Cards Area: Current Writings and Trending etc -->
+  <section id="below-cards" class="content-section">
+    <h2>Current Writings</h2>
+    <ul>
+      <li><a href="#">இனிய காலை வணக்கம்</a></li>
+      <li><a href="#">மாலை நேர சிந்தனை</a></li>
+      <li><a href="#">காதல் கவிதை தொகுப்பு</a></li>
+      <li><a href="#">மனம் பேசும் கதைகள்</a></li>
+    </ul>
+
+    <h2>Trending Poems</h2>
+    <ul>
+      <li><a href="#">கடல் காற்று</a></li>
+      <li><a href="#">நிழல் சொல்</a></li>
+      <li><a href="#">துயரம் மழை</a></li>
+    </ul>
+
+    <h2>Popular Lyrics</h2>
+    <ul>
+      <li><a href="#">காதல் ஓசை</a></li>
+      <li><a href="#">வெற்றி பாடல்</a></li>
+    </ul>
+
+    <h2>Mini Stories</h2>
+    <ul>
+      <li><a href="#">அடர்ந்த காட்டில்</a></li>
+      <li><a href="#">பரிசு நாள்</a></li>
+    </ul>
+
+    <h2>Inspiring Quotes</h2>
+    <ul>
+      <li><a href="#">மனப்பாங்கு</a></li>
+      <li><a href="#">அறிவு பேச்சு</a></li>
+    </ul>
+
+    <h2>Featured Blogs</h2>
+    <ul>
+      <li><a href="#">தமிழ் எழுத்து வரலாறு</a></li>
+      <li
