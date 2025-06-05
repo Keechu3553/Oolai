@@ -1,243 +1,381 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Oolai (ஓலை) - Calm Tamil Emotional Expression</title>
-<style>
-  /* --- Reset & base styles --- */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fefefe;
-    color: #222;
-    line-height: 1.5;
-  }
-  a {
-    text-decoration: none;
-    color: #3a86ff;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  h1,h2,h3,h4 {
-    margin: 0;
-    font-weight: 700;
-  }
-
-  /* --- Container --- */
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem 1.5rem;
-  }
-
-  /* --- Header --- */
-  header {
-    background: #3a86ff;
-    color: white;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  }
-  header h1 {
-    font-size: 2.8rem;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.2rem;
-  }
-  header p {
-    font-weight: 500;
-    font-size: 1.1rem;
-    opacity: 0.85;
-  }
-
-  /* --- Mood Filter Buttons --- */
-  #mood-filter {
-    display: flex;
-    gap: 0.75rem;
-    margin: 1rem 0 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #mood-filter button {
-    background: #e0e0e0;
-    border: none;
-    border-radius: 20px;
-    padding: 0.55rem 1.3rem;
-    cursor: pointer;
-    font-weight: 600;
-    color: #555;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    user-select: none;
-    font-size: 0.95rem;
-  }
-  #mood-filter button.active,
-  #mood-filter button:hover {
-    background: #3a86ff;
-    color: white;
-  }
-
-  /* --- Section styles --- */
-  section.content-section {
-    margin-bottom: 3.8rem;
-  }
-  section.content-section h2 {
-    font-size: 1.9rem;
-    color: #3a86ff;
-    margin-bottom: 1.25rem;
-    border-bottom: 3px solid #3a86ff;
-    padding-bottom: 0.3rem;
-    max-width: fit-content;
-  }
-
-  /* --- Cards Grid --- */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1.25rem 1.5rem;
-  }
-
-  /* --- Card style --- */
-  .card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.3rem 1.6rem;
-    box-shadow: 0 3px 9px rgba(0,0,0,0.07);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: box-shadow 0.3s ease;
-  }
-  .card:hover {
-    box-shadow: 0 8px 20px rgba(58,134,255,0.3);
-  }
-  .card .title {
-    font-weight: 700;
-    font-size: 1.18rem;
-    margin-bottom: 0.6rem;
-    color: #222;
-    line-height: 1.3;
-  }
-  .card .content {
-    flex-grow: 1;
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 0.8rem;
-    white-space: pre-wrap;
-    line-height: 1.35;
-  }
-  .card .meta {
-    font-size: 0.82rem;
-    color: #888;
-    font-style: italic;
-  }
-
-  /* --- Start Writing Box --- */
-  #start-writing {
-    background: #3a86ff;
-    color: white;
-    border-radius: 18px;
-    margin: 3rem auto 4rem;
-    padding: 3rem 4rem;
-    max-width: 900px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.65rem;
-    cursor: pointer;
-    user-select: none;
-    box-shadow: 0 7px 24px rgba(58,134,255,0.45);
-    transition: background-color 0.3s ease;
-    letter-spacing: 0.05em;
-  }
-  #start-writing:hover {
-    background: #2e6edc;
-  }
-
-  /* --- AI Assistant Section --- */
-  #ai-assistant {
-    max-width: 900px;
-    margin: 0 auto 5rem;
-    padding: 2.5rem 3rem;
-    border-radius: 16px;
-    background: #f0f7ff;
-    box-shadow: 0 5px 17px rgba(58,134,255,0.22);
-  }
-  #ai-assistant h2 {
-    color: #3a86ff;
-    margin-bottom: 1.4rem;
-    font-size: 2rem;
-  }
-  #ai-assistant textarea {
-    width: 100%;
-    min-height: 110px;
-    padding: 1rem 1.2rem;
-    font-size: 1.1rem;
-    border-radius: 12px;
-    border: 1.7px solid #3a86ff;
-    resize: vertical;
-    font-family: inherit;
-  }
-  #ai-assistant button {
-    margin-top: 1.4rem;
-    background: #3a86ff;
-    border: none;
-    color: white;
-    padding: 0.9rem 2.6rem;
-    border-radius: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-  }
-  #ai-assistant button:hover {
-    background: #2e6edc;
-  }
-  #ai-response {
-    margin-top: 1.7rem;
-    padding: 1.2rem 1.4rem;
-    background: white;
-    border-radius: 14px;
-    box-shadow: 0 3px 16px rgba(0,0,0,0.06);
-    min-height: 80px;
-    font-size: 1.05rem;
-    color: #222;
-    white-space: pre-wrap;
-  }
-
-  /* --- Footer --- */
-  footer {
-    text-align: center;
-    padding: 2.2rem 1rem;
-    font-size: 0.9rem;
-    color: #555;
-    border-top: 1px solid #ddd;
-    margin-top: 4rem;
-  }
-
-  /* --- Responsive tweaks --- */
-  @media (max-width: 600px) {
-    #start-writing {
-      font-size: 1.4rem;
-      padding: 2rem 2.8rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oolai (ஓலை) - Tamil Emotional Expression</title>
+  <style>
+    /* ===== Reset & base ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    body {
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+    }
+
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    /* ===== Container ===== */
+    .container {
+      max-width: 1080px;
+      width: 100%;
+      margin: 0 auto 40px;
+    }
+
+    /* ===== Section Titles ===== */
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #4a90e2;
+      padding-bottom: 6px;
+    }
+
+    /* ===== Mood Filter Buttons ===== */
+    #mood-filter {
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    #mood-filter button {
+      background: #e0e7ff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(74, 144, 226, 0.3);
+    }
+
+    #mood-filter button.active,
+    #mood-filter button:hover {
+      background: #4a90e2;
+      color: white;
+    }
+
+    /* ===== Cards Grid ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #34495e;
+    }
+
+    .card p {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 12px;
+      white-space: pre-line;
+    }
+
+    .card .author {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: auto;
+      text-align: right;
+    }
+
+    /* ===== Start Writing Big Box ===== */
+    #start-writing-box {
+      background: #4a90e2;
+      color: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin: 40px 0;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    }
+
+    #start-writing-box h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    #start-writing-box button {
+      background: white;
+      color: #4a90e2;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+    }
+
+    #start-writing-box button:hover {
+      background: #dbe9ff;
+    }
+
+    /* ===== AI Assistant Section ===== */
     #ai-assistant {
-      padding: 2rem 2rem;
+      background: #eef5fb;
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.15);
+      max-width: 800px;
+      margin: 50px auto;
     }
-  }
-</style>
+
+    #ai-assistant h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    #ai-assistant textarea {
+      width: 100%;
+      height: 120px;
+      border-radius: 12px;
+      border: 2px solid #4a90e2;
+      padding: 12px;
+      font-size: 1rem;
+      resize: vertical;
+      margin-bottom: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #ai-assistant button {
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      float: right;
+      transition: background-color 0.3s ease;
+    }
+
+    #ai-assistant button:hover {
+      background: #3a6fcc;
+    }
+
+    #ai-response {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      min-height: 80px;
+      font-size: 1rem;
+      color: #333;
+      white-space: pre-wrap;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      margin: 40px 0 10px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      #start-writing-box {
+        padding: 30px 15px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="container">
+    <h1>Oolai (ஓலை)</h1>
+    <p style="text-align:center; margin-bottom: 30px;">Tamil Emotional Expression — Poems, Lyrics, Mini-Stories, Quotes & Blogs</p>
+  </header>
 
-<header>
-  <h1>Oolai (ஓலை)</h1>
-  <p>Calm Tamil Emotional Expression - Mini Stories, Poems, Lyrics, Quotes & Blogs</p>
-</header>
+  <!-- Mood Filter Buttons -->
+  <section id="mood-filter" class="container" aria-label="Mood filter">
+    <button class="active" data-mood="all">All Moods</button>
+    <button data-mood="happy">😊 Happy</button>
+    <button data-mood="sad">😢 Sad</button>
+    <button data-mood="inspired">🌟 Inspired</button>
+    <button data-mood="love">❤️ Love</button>
+    <button data-mood="calm">🧘 Calm</button>
+  </section>
 
-<div class="container">
+  <!-- Main Content -->
+  <main class="container">
 
-  <!-- Mood Filter -->
-  <div id="mood-filter" role="navigation" aria-label="Mood filter">
-    <button data-filter="all"
+    <!-- Poems Section -->
+    <section id="poems">
+      <h2>Poems</h2>
+      <div class="cards-grid" id="poems-cards">
+        <!-- Cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Lyrics Section -->
+    <section id="lyrics" style="margin-top: 50px;">
+      <h2>Lyrics</h2>
+      <div class="cards-grid" id="lyrics-cards">
+        <!-- Cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Mini Stories Section -->
+    <section id="mini-stories" style="margin-top: 50px;">
+      <h2>Mini Stories</h2>
+      <div class="cards-grid" id="mini-stories-cards">
+        <!-- Cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section id="quotes" style="margin-top: 50px;">
+      <h2>Quotes</h2>
+      <div class="cards-grid" id="quotes-cards">
+        <!-- Cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" style="margin-top: 50px;">
+      <h2>Blogs</h2>
+      <div class="cards-grid" id="blogs-cards">
+        <!-- Cards inserted by JS -->
+      </div>
+    </section>
+
+    <!-- Below Cards Content Boxes -->
+    <section id="below-cards-content" style="margin-top: 70px;">
+      <!-- Trending Poems -->
+      <div style="margin-bottom: 40px;">
+        <h3 style="color:#4a90e2;">Trending Poems</h3>
+        <ul id="trending-poems" style="list-style:none; padding-left:0; color:#555;">
+          <!-- Insert trending poems here -->
+        </ul>
+      </div>
+
+      <!-- Popular Lyrics -->
+      <div style="margin-bottom: 40px;">
+        <h3 style="color:#4a90e2;">Popular Lyrics</h3>
+        <ul id="popular-lyrics" style="list-style:none; padding-left:0; color:#555;">
+          <!-- Insert popular lyrics here -->
+        </ul>
+      </div>
+
+      <!-- Inspiring Quotes -->
+      <div style="margin-bottom: 40px;">
+        <h3 style="color:#4a90e2;">Inspiring Quotes</h3>
+        <ul id="inspiring-quotes" style="list-style:none; padding-left:0; color:#555;">
+          <!-- Insert inspiring quotes here -->
+        </ul>
+      </div>
+
+      <!-- Featured Blogs -->
+      <div style="margin-bottom: 40px;">
+        <h3 style="color:#4a90e2;">Featured Blogs</h3>
+        <ul id="featured-blogs" style="list-style:none; padding-left:0; color:#555;">
+          <!-- Insert featured blogs here -->
+        </ul>
+      </div>
+
+      <!-- Current Writings -->
+      <div>
+        <h3 style="color:#4a90e2;">Current Writings</h3>
+        <ul id="current-writings" style="list-style:none; padding-left:0; color:#555;">
+          <!-- Insert current writings here -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Start Writing Big Box -->
+    <section id="start-writing-box" tabindex="0" role="region" aria-label="Start Writing">
+      <h2>Start Writing Your Own Story</h2>
+      <p>Share your thoughts, poems, lyrics or mini-stories with the world. Begin your creative journey now!</p>
+      <button onclick="alert('Start writing feature coming soon!')">Start Writing</button>
+    </section>
+  </main>
+
+  <!-- AI Assistant -->
+  <section id="ai-assistant" class="container" aria-label="AI Assistant">
+    <h2>AI Writing Assistant</h2>
+    <textarea id="ai-input" placeholder="Type your ideas or prompts here..."></textarea>
+    <button id="ai-submit">Get Help</button>
+    <div id="ai-response" aria-live="polite"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Oolai (ஓலை) — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Sample data sets - replace or expand as needed
+    const data = {
+      poems: [
+        { title: "Moonlight Whisper", author: "A. Kumar", mood: "calm", content: "மூன்லைட் கீழே,\nஅழகு போல..." },
+        { title: "Heartbeats", author: "N. Ravi", mood: "love", content: "இதயம் ஆடுகிறது,\nகாதல் ராகம்..." },
+        { title: "Tears of Rain", author: "L. Meena", mood: "sad", content: "மழை நனைத்தால்,\nவாடும் நினைவுகள்..." },
+        { title: "Joyful Morning", author: "R. Siva", mood: "happy", content: "கும்மிசூட்டும் காலை,\nமனம் ஆடுகிறது..." },
+        { title: "Dreams of Tomorrow", author: "D. Anbu", mood: "inspired", content: "நாளைய கனவுகள்,\nஎன்னை எழுப்பும்..." },
+      ],
+      lyrics: [
+        { title: "Silent Songs", author: "K. Radha", mood: "calm", content: "மௌனமே பாடும்,\nபாடல்கள்..." },
+        { title: "Love’s Melody", author: "V. Arjun", mood: "love", content: "காதல் மெல்லிசை,\nஇசைக்காற்று..." },
+        { title: "Broken Chains", author: "P. Suresh", mood: "sad", content: "இறுதிப் பிணைகள்,\nமுடிந்துபோன..." },
+      ],
+      "mini-stories": [
+        { title: "A Rainy Day", author: "M. Selvi", mood: "sad", content: "மழை கண்ணீர் போன்றது,\nகதை ஆரம்பம்..." },
+        { title: "The Lost Letter", author: "S. Raja", mood: "love", content: "கழிந்த கட
