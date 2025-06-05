@@ -2,31 +2,37 @@
 <html lang="ta">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ஓலை (Oolai)</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <header>
-    <h1>ஓலை (Oolai)</h1>
-    <p>A calm, creative space for mini stories, blogs, poems & lyric writing.</p>
+  <header class="hero">
+    <div class="container">
+      <h1>ஓலை (Oolai)</h1>
+      <p>A calm and creative Tamil space for stories, poems, blogs, and emotions.</p>
+    </div>
   </header>
 
-  <nav>
-    <a href="#stories">Mini Stories</a>
-    <a href="#blogs">Blogs</a>
-    <a href="#poems">Poems</a>
-    <a href="#lyrics">Lyrics</a>
-    <a href="#trending">Trending</a>
-    <a href="#mood-filter">Mood Filter</a>
-    <a href="#ai-assistant">AI Assistant</a>
+  <nav class="navbar">
+    <div class="container nav-links">
+      <a href="#stories">Mini Stories</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#poems">Poems</a>
+      <a href="#lyrics">Lyrics</a>
+      <a href="#trending">Trending</a>
+      <a href="#mood-filter">Mood</a>
+      <a href="#ai-assistant">AI Help</a>
+    </div>
   </nav>
 
-  <main>
-    <section id="stories" class="section">
-      <h2>Mini Stories</h2>
-      <div class="grid">
+  <section id="stories" class="section">
+    <div class="container">
+      <h2>🌿 Mini Stories</h2>
+      <p>Quick tales, quiet emotions, vivid images in few lines.</p>
+      <div class="card-grid">
         <div class="card">
           <h3>Whispering Winds</h3>
           <p>A fleeting moment under the banyan tree, where time stood still.</p>
@@ -36,11 +42,14 @@
           <p>Footsteps echo softly as the stars guide the way home.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="blogs" class="section">
-      <h2>Blogs</h2>
-      <div class="grid">
+  <section id="blogs" class="section">
+    <div class="container">
+      <h2>📖 Blogs</h2>
+      <p>Thoughtful musings, memories, and cultural fragments.</p>
+      <div class="card-grid">
         <div class="card">
           <h3>The Colors of Chennai</h3>
           <p>Exploring the vibrant streets and soulful music that define the city.</p>
@@ -50,12 +59,15 @@
           <p>How rain rekindles stories from childhood and paints the present anew.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="poems" class="section">
-      <h2>Poetic Feeds</h2>
+  <section id="poems" class="section">
+    <div class="container">
+      <h2>📝 Poetic Feeds</h2>
+      <p>Short verses that whisper, sing, and heal.</p>
       <textarea placeholder="Write your poem here..."></textarea>
-      <div class="grid">
+      <div class="card-grid">
         <div class="card">
           <h3>Silent Echoes</h3>
           <p>Between the spaces of words, a quiet truth hums softly.</p>
@@ -65,16 +77,22 @@
           <p>Each dawn sings a song of hope, waiting to be heard.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="lyrics" class="section">
-      <h2>Lyric Writing</h2>
+  <section id="lyrics" class="section">
+    <div class="container">
+      <h2>🎵 Lyric Writing</h2>
+      <p>Turn emotions into lyrical magic. Start your songwriting.</p>
       <textarea placeholder="Compose your lyrics here..."></textarea>
-    </section>
+    </div>
+  </section>
 
-    <section id="trending" class="section">
-      <h2>Trending Posts</h2>
-      <div class="grid">
+  <section id="trending" class="section">
+    <div class="container">
+      <h2>🔥 Trending Posts</h2>
+      <p>Most loved stories, blogs, and verses by Oolai users.</p>
+      <div class="card-grid">
         <div class="card">
           <h3>The Last Monsoon</h3>
           <p>A poignant poem capturing the essence of farewell rains.</p>
@@ -84,37 +102,38 @@
           <p>A lively blog post about the pulsating heartbeat of urban life.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="mood-filter" class="section">
-      <h2>Mood Based Filter</h2>
-      <p>Select moods to filter posts and find content that resonates with your feelings.</p>
-      <div class="filter-buttons">
-        <button>Happy</button>
-        <button>Calm</button>
-        <button>Melancholy</button>
-        <button>Inspired</button>
+  <section id="mood-filter" class="section mood-section">
+    <div class="container">
+      <h2>🎭 Mood Filter</h2>
+      <p>Choose how you feel to discover matching content.</p>
+      <div class="mood-buttons">
+        <button class="mood-btn">😊 Happy</button>
+        <button class="mood-btn">🌧️ Melancholy</button>
+        <button class="mood-btn">🌿 Calm</button>
+        <button class="mood-btn">🔥 Inspired</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ai-assistant" class="section">
-      <h2>AI Assistant</h2>
-      <textarea placeholder="Type your request to the AI assistant..."></textarea>
-      <button onclick="simulateAIResponse()">Send</button>
-      <div id="ai-response"></div>
-    </section>
-  </main>
+  <section id="ai-assistant" class="section ai-section">
+    <div class="container">
+      <h2>🤖 AI Assistant</h2>
+      <p>Need help with your story, poem, or lyrics? Ask our AI.</p>
+      <textarea placeholder="Type your request here..."></textarea>
+      <button id="ai-send-btn">Ask AI</button>
+      <div id="ai-response" class="ai-response-box"></div>
+    </div>
+  </section>
 
   <footer>
-    <p>Made with ❤️ for poetic souls • © Oolai 2025</p>
+    <div class="container">
+      <p>Made with ❤️ for Tamil minds • © Oolai 2025</p>
+    </div>
   </footer>
 
-  <script>
-    function simulateAIResponse() {
-      const responseBox = document.getElementById("ai-response");
-      responseBox.innerHTML = "<p><em>✨ Here's an inspiring verse: 'Let your silence speak in syllables.'</em></p>";
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
