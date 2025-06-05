@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Oolai - Calm Tamil Emotional Expression</title>
+<title>Oolai (ஓலை) - Calm Tamil Emotional Expression</title>
 <style>
-  /* Reset and basics */
+  /* --- Reset & base styles --- */
   * {
     box-sizing: border-box;
   }
@@ -23,19 +23,19 @@
   a:hover {
     text-decoration: underline;
   }
+  h1,h2,h3,h4 {
+    margin: 0;
+    font-weight: 700;
+  }
 
-  /* Container and layout */
+  /* --- Container --- */
   .container {
     max-width: 1200px;
     margin: auto;
     padding: 1rem 1.5rem;
   }
-  h1, h2, h3, h4 {
-    margin-top: 0;
-    font-weight: 700;
-  }
 
-  /* Header */
+  /* --- Header --- */
   header {
     background: #3a86ff;
     color: white;
@@ -44,12 +44,17 @@
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   }
   header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 0.05em;
+    font-size: 2.8rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+  header p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    opacity: 0.85;
   }
 
-  /* Mood Filter Buttons */
+  /* --- Mood Filter Buttons --- */
   #mood-filter {
     display: flex;
     gap: 0.75rem;
@@ -61,12 +66,13 @@
     background: #e0e0e0;
     border: none;
     border-radius: 20px;
-    padding: 0.5rem 1.2rem;
+    padding: 0.55rem 1.3rem;
     cursor: pointer;
     font-weight: 600;
     color: #555;
     transition: background-color 0.3s ease, color 0.3s ease;
     user-select: none;
+    font-size: 0.95rem;
   }
   #mood-filter button.active,
   #mood-filter button:hover {
@@ -74,143 +80,151 @@
     color: white;
   }
 
-  /* Content Sections */
+  /* --- Section styles --- */
   section.content-section {
-    margin-bottom: 3rem;
+    margin-bottom: 3.8rem;
   }
   section.content-section h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     color: #3a86ff;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     border-bottom: 3px solid #3a86ff;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.3rem;
     max-width: fit-content;
   }
 
-  /* Cards Grid */
+  /* --- Cards Grid --- */
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1rem 1.25rem;
+    gap: 1.25rem 1.5rem;
   }
 
-  /* Card style */
+  /* --- Card style --- */
   .card {
     background: white;
-    border-radius: 10px;
-    padding: 1.25rem 1.5rem;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+    border-radius: 12px;
+    padding: 1.3rem 1.6rem;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.07);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: box-shadow 0.3s ease;
   }
   .card:hover {
-    box-shadow: 0 8px 15px rgba(58,134,255,0.3);
+    box-shadow: 0 8px 20px rgba(58,134,255,0.3);
   }
   .card .title {
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1.18rem;
     margin-bottom: 0.6rem;
     color: #222;
+    line-height: 1.3;
   }
   .card .content {
     flex-grow: 1;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #444;
     margin-bottom: 0.8rem;
     white-space: pre-wrap;
+    line-height: 1.35;
   }
   .card .meta {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: #888;
     font-style: italic;
   }
 
-  /* Start Writing Big Box */
+  /* --- Start Writing Box --- */
   #start-writing {
     background: #3a86ff;
     color: white;
-    border-radius: 15px;
+    border-radius: 18px;
     margin: 3rem auto 4rem;
-    padding: 2.5rem 3rem;
+    padding: 3rem 4rem;
     max-width: 900px;
     text-align: center;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     cursor: pointer;
     user-select: none;
-    box-shadow: 0 6px 20px rgba(58,134,255,0.4);
+    box-shadow: 0 7px 24px rgba(58,134,255,0.45);
     transition: background-color 0.3s ease;
+    letter-spacing: 0.05em;
   }
   #start-writing:hover {
     background: #2e6edc;
   }
 
-  /* AI Assistant Section */
+  /* --- AI Assistant Section --- */
   #ai-assistant {
     max-width: 900px;
     margin: 0 auto 5rem;
-    padding: 2rem 2.5rem;
-    border-radius: 15px;
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
     background: #f0f7ff;
-    box-shadow: 0 4px 15px rgba(58,134,255,0.2);
+    box-shadow: 0 5px 17px rgba(58,134,255,0.22);
   }
   #ai-assistant h2 {
     color: #3a86ff;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.4rem;
+    font-size: 2rem;
   }
   #ai-assistant textarea {
     width: 100%;
-    min-height: 100px;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 1.5px solid #3a86ff;
+    min-height: 110px;
+    padding: 1rem 1.2rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    border: 1.7px solid #3a86ff;
     resize: vertical;
     font-family: inherit;
   }
   #ai-assistant button {
-    margin-top: 1rem;
+    margin-top: 1.4rem;
     background: #3a86ff;
     border: none;
     color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 10px;
+    padding: 0.9rem 2.6rem;
+    border-radius: 12px;
     font-weight: 700;
     cursor: pointer;
+    font-size: 1.1rem;
     transition: background-color 0.3s ease;
   }
   #ai-assistant button:hover {
     background: #2e6edc;
   }
   #ai-response {
-    margin-top: 1.5rem;
-    padding: 1rem 1.25rem;
+    margin-top: 1.7rem;
+    padding: 1.2rem 1.4rem;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    min-height: 60px;
-    font-size: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+    min-height: 80px;
+    font-size: 1.05rem;
     color: #222;
     white-space: pre-wrap;
   }
 
-  /* Footer */
+  /* --- Footer --- */
   footer {
     text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.85rem;
+    padding: 2.2rem 1rem;
+    font-size: 0.9rem;
     color: #555;
     border-top: 1px solid #ddd;
     margin-top: 4rem;
   }
 
-  /* Responsive tweaks */
+  /* --- Responsive tweaks --- */
   @media (max-width: 600px) {
     #start-writing {
-      font-size: 1.3rem;
-      padding: 1.8rem 2rem;
+      font-size: 1.4rem;
+      padding: 2rem 2.8rem;
+    }
+    #ai-assistant {
+      padding: 2rem 2rem;
     }
   }
 </style>
@@ -224,148 +238,6 @@
 
 <div class="container">
 
-  <!-- Mood Filter Buttons -->
-  <div id="mood-filter">
-    <button data-filter="all" class="active">All</button>
-    <button data-filter="happy">Happy 😊</button>
-    <button data-filter="sad">Sad 😢</button>
-    <button data-filter="love">Love ❤️</button>
-    <button data-filter="motivational">Motivational 💪</button>
-    <button data-filter="thoughtful">Thoughtful 🤔</button>
-    <button data-filter="calm">Calm 🕊️</button>
-  </div>
-
-  <!-- Poems Section -->
-  <section id="poems" class="content-section">
-    <h2>Poems</h2>
-    <div class="cards-grid">
-      <article class="card" data-mood="happy">
-        <div class="title">கடல் காற்று</div>
-        <div class="content">கடல் காற்று வீசும் போது...</div>
-        <div class="meta">By Arul | 2 days ago</div>
-      </article>
-      <article class="card" data-mood="thoughtful">
-        <div class="title">நிழல் சொல்</div>
-        <div class="content">நிழல் சொல்கிறேன் நெஞ்சுக்குள்...</div>
-        <div class="meta">By Meera | 5 days ago</div>
-      </article>
-      <article class="card" data-mood="sad">
-        <div class="title">துயரம் மழை</div>
-        <div class="content">மழை விழுந்து நிலத்தை நனையும்...</div>
-        <div class="meta">By Kumar | 1 week ago</div>
-      </article>
-      <!-- Add more poem cards here -->
-    </div>
-  </section>
-
-  <!-- Lyrics Section -->
-  <section id="lyrics" class="content-section">
-    <h2>Lyrics</h2>
-    <div class="cards-grid">
-      <article class="card" data-mood="love">
-        <div class="title">காதல் ஓசை</div>
-        <div class="content">காதல் ஓசை காதல் கவிதை...</div>
-        <div class="meta">By Priya | 3 days ago</div>
-      </article>
-      <article class="card" data-mood="motivational">
-        <div class="title">வெற்றி பாடல்</div>
-        <div class="content">வெற்றி என்பது கடைசி வரை...</div>
-        <div class="meta">By Ramesh | 1 day ago</div>
-      </article>
-      <!-- Add more lyrics cards here -->
-    </div>
-  </section>
-
-  <!-- Mini Stories Section -->
-  <section id="mini-stories" class="content-section">
-    <h2>Mini Stories</h2>
-    <div class="cards-grid">
-      <article class="card" data-mood="calm">
-        <div class="title">அடர்ந்த காட்டில்</div>
-        <div class="content">அடர்ந்த காட்டின் மையத்தில் ஒரு சிறிய கிராமம்...</div>
-        <div class="meta">By Kavi | 6 days ago</div>
-      </article>
-      <article class="card" data-mood="happy">
-        <div class="title">பரிசு நாள்</div>
-        <div class="content">பரிசு நாள் கொண்டாட்டம் மிகுந்த சந்தோஷம்...</div>
-        <div class="meta">By Anbu | 4 days ago</div>
-      </article>
-      <!-- Add more mini stories here -->
-    </div>
-  </section>
-
-  <!-- Quotes Section -->
-  <section id="quotes" class="content-section">
-    <h2>Quotes</h2>
-    <div class="cards-grid">
-      <article class="card" data-mood="motivational">
-        <div class="title">மனப்பாங்கு</div>
-        <div class="content">மனப்பாங்கு தான் வாழ்வின் விசை...</div>
-        <div class="meta">By Senthil | 2 weeks ago</div>
-      </article>
-      <article class="card" data-mood="thoughtful">
-        <div class="title">அறிவு பேச்சு</div>
-        <div class="content">அறிவு பேச்சு ஆழமானது...</div>
-        <div class="meta">By Latha | 1 week ago</div>
-      </article>
-      <!-- Add more quotes here -->
-    </div>
-  </section>
-
-  <!-- Blogs Section -->
-  <section id="blogs" class="content-section">
-    <h2>Blogs</h2>
-    <div class="cards-grid">
-      <article class="card" data-mood="calm">
-        <div class="title">தமிழ் எழுத்து வரலாறு</div>
-        <div class="content">தமிழ் எழுத்தின் வரலாறு பற்றிய ஒரு சிறிய ஆய்வு...</div>
-        <div class="meta">By Selvi | 3 weeks ago</div>
-      </article>
-      <article class="card" data-mood="happy">
-        <div class="title">சிறுவர் கதைகள்</div>
-        <div class="content">சிறுவர்களுக்கான கதைகள் மற்றும் கல்வி...</div>
-        <div class="meta">By Hari | 5 days ago</div>
-      </article>
-      <!-- Add more blogs here -->
-    </div>
-  </section>
-
-  <!-- Below Cards Area: Current Writings and Trending etc -->
-  <section id="below-cards" class="content-section">
-    <h2>Current Writings</h2>
-    <ul>
-      <li><a href="#">இனிய காலை வணக்கம்</a></li>
-      <li><a href="#">மாலை நேர சிந்தனை</a></li>
-      <li><a href="#">காதல் கவிதை தொகுப்பு</a></li>
-      <li><a href="#">மனம் பேசும் கதைகள்</a></li>
-    </ul>
-
-    <h2>Trending Poems</h2>
-    <ul>
-      <li><a href="#">கடல் காற்று</a></li>
-      <li><a href="#">நிழல் சொல்</a></li>
-      <li><a href="#">துயரம் மழை</a></li>
-    </ul>
-
-    <h2>Popular Lyrics</h2>
-    <ul>
-      <li><a href="#">காதல் ஓசை</a></li>
-      <li><a href="#">வெற்றி பாடல்</a></li>
-    </ul>
-
-    <h2>Mini Stories</h2>
-    <ul>
-      <li><a href="#">அடர்ந்த காட்டில்</a></li>
-      <li><a href="#">பரிசு நாள்</a></li>
-    </ul>
-
-    <h2>Inspiring Quotes</h2>
-    <ul>
-      <li><a href="#">மனப்பாங்கு</a></li>
-      <li><a href="#">அறிவு பேச்சு</a></li>
-    </ul>
-
-    <h2>Featured Blogs</h2>
-    <ul>
-      <li><a href="#">தமிழ் எழுத்து வரலாறு</a></li>
-      <li
+  <!-- Mood Filter -->
+  <div id="mood-filter" role="navigation" aria-label="Mood filter">
+    <button data-filter="all"
